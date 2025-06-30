@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: 'https://aliiyuu.github.io',
     title: 'Alicia Yu',
     description: "Alicia Yu's software development portfolio.",
-    siteName: 'Alicia Yu - Portfolio',
+    siteName: 'Alicia Yu',
     images: [
       {
         url: '/og-image.jpg', // Add an Open Graph image
