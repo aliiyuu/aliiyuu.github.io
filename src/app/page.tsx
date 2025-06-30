@@ -324,12 +324,21 @@ export default function Home() {
             </div>
 
             {/* Name and Title */}
-            <div style={{ position: 'relative', display: 'inline-block' }}>
+            <div style={{ 
+              position: 'relative', 
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              textAlign: 'center',
+              width: '100%',
+              marginBottom: '32px'
+            }}>
               <h1 style={{
                 fontSize: '4.5rem',
                 fontWeight: '600',
                 color: isDarkMode ? '#ffffff' : '#7C6FBE',
-                marginBottom: '8px',
+                margin: '0 0 8px 0',
                 lineHeight: '1.2',
                 letterSpacing: '-0.02em',
                 position: 'relative',
@@ -337,23 +346,26 @@ export default function Home() {
                 textShadow: isDarkMode 
                   ? '0 0 5px rgba(168, 85, 247, 0.8), 0 0 10px rgba(168, 85, 247, 0.6), 0 0 15px rgba(168, 85, 247, 0.4), 0 0 20px rgba(236, 72, 153, 0.6), 0 0 30px rgba(236, 72, 153, 0.4), 0 0 40px rgba(147, 51, 234, 0.3)'
                   : 'none',
-                animation: isDarkMode ? 'neonFlicker 3s ease-in-out infinite alternate' : 'none'
+                animation: isDarkMode ? 'neonFlicker 3s ease-in-out infinite alternate' : 'none',
+                textAlign: 'center',
+                width: '100%'
               }}>
                 alicia yu
               </h1>
+              <p style={{
+                fontSize: '1.2rem',
+                color: isDarkMode ? '#b39ddb' : '#7C6FBE',
+                margin: '0',
+                fontWeight: '600',
+                lineHeight: '1.5',
+                whiteSpace: 'normal',
+                wordWrap: 'break-word',
+                textAlign: 'center',
+                width: '100%'
+              }}>
+                cs + stats + ling @ ucla
+              </p>
             </div>
-            <p style={{
-              fontSize: '1.2rem',
-              color: isDarkMode ? '#b39ddb' : '#7C6FBE',
-              marginBottom: '32px',
-              fontWeight: '600',
-              lineHeight: '1.5',
-              whiteSpace: 'normal',
-              wordWrap: 'break-word',
-              maxWidth: '300px'
-            }}>
-              cs + stats + ling @ ucla
-            </p>
 
             {/* Action Buttons */}
             <div style={{
@@ -361,7 +373,8 @@ export default function Home() {
               flexDirection: 'column',
               gap: '12px',
               width: '100%',
-              maxWidth: '250px'
+              maxWidth: '250px',
+              alignItems: 'center'
             }}>
               {[
                 { icon: Mail, label: 'Email', href: 'mailto:aliciayu@g.ucla.edu' },
@@ -377,6 +390,7 @@ export default function Home() {
                   style={{
                     display: 'flex',
                     alignItems: 'center',
+                    justifyContent: 'center',
                     gap: '12px',
                     padding: '12px 20px',
                     backgroundColor: isDarkMode 
@@ -396,7 +410,7 @@ export default function Home() {
                     backdropFilter: 'blur(10px)',
                     fontSize: '0.95rem',
                     width: '100%',
-                    justifyContent: 'flex-start'
+                    textAlign: 'center'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-2px)';
@@ -703,12 +717,14 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
             flex-wrap: wrap !important;
             justify-content: center !important;
             max-width: none !important;
+            gap: 12px !important;
           }
           
           .desktop-horizontal > div:first-child > div:last-child > a {
             width: auto !important;
             justify-content: center !important;
             padding: 10px 20px !important;
+            min-width: 120px;
           }
         }
         
@@ -716,18 +732,24 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
           h1 { font-size: 3.5rem !important; }
         }
         
-        @media (max-width: 480px) {
-          h1 { font-size: 3rem !important; }
-          
+        @media (max-width: 600px) {
           .desktop-horizontal > div:first-child > div:last-child {
             flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            max-width: 280px !important;
           }
           
           .desktop-horizontal > div:first-child > div:last-child > a {
             width: 100% !important;
-            justify-content: flex-start !important;
+            justify-content: center !important;
             padding: 12px 20px !important;
+            text-align: center !important;
           }
+        }
+        
+        @media (max-width: 480px) {
+          h1 { font-size: 3rem !important; }
         }
       `}</style>
     </div>
