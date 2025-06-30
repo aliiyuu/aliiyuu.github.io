@@ -109,6 +109,114 @@ export default function Home() {
           animationDelay: '6s'
         }}></div>
         
+        {/* Floating pastel clouds */}
+        <div style={{
+          position: 'absolute',
+          top: '15%',
+          left: '5%',
+          width: '200px',
+          height: '120px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse, rgba(236, 72, 153, 0.7) 0%, rgba(236, 72, 153, 0.4) 30%, rgba(236, 72, 153, 0.1) 60%, transparent 80%)'
+            : 'radial-gradient(ellipse, rgba(248, 180, 217, 0.9) 0%, rgba(248, 180, 217, 0.6) 30%, rgba(248, 180, 217, 0.2) 60%, transparent 80%)',
+          borderRadius: '80px',
+          filter: 'blur(35px)',
+          animation: 'cloudFloat1 20s ease-in-out infinite',
+          boxShadow: isDarkMode 
+            ? '0 0 80px rgba(236, 72, 153, 0.8), 0 0 160px rgba(236, 72, 153, 0.6), 0 0 240px rgba(236, 72, 153, 0.3)'
+            : '0 0 60px rgba(248, 180, 217, 0.9), 0 0 120px rgba(248, 180, 217, 0.7), 0 0 180px rgba(248, 180, 217, 0.4)'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '40%',
+          right: '8%',
+          width: '250px',
+          height: '140px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse, rgba(168, 85, 247, 0.8) 0%, rgba(168, 85, 247, 0.5) 30%, rgba(168, 85, 247, 0.15) 60%, transparent 80%)'
+            : 'radial-gradient(ellipse, rgba(196, 181, 253, 1.0) 0%, rgba(196, 181, 253, 0.7) 30%, rgba(196, 181, 253, 0.25) 60%, transparent 80%)',
+          borderRadius: '90px',
+          filter: 'blur(40px)',
+          animation: 'cloudFloat2 25s ease-in-out infinite',
+          animationDelay: '5s',
+          boxShadow: isDarkMode 
+            ? '0 0 100px rgba(168, 85, 247, 0.9), 0 0 180px rgba(168, 85, 247, 0.7), 0 0 260px rgba(168, 85, 247, 0.4)'
+            : '0 0 70px rgba(196, 181, 253, 1.0), 0 0 140px rgba(196, 181, 253, 0.8), 0 0 210px rgba(196, 181, 253, 0.5)'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          bottom: '25%',
+          left: '12%',
+          width: '180px',
+          height: '110px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse, rgba(147, 197, 253, 0.8) 0%, rgba(147, 197, 253, 0.5) 30%, rgba(147, 197, 253, 0.2) 60%, transparent 80%)'
+            : 'radial-gradient(ellipse, rgba(191, 219, 254, 1.1) 0%, rgba(191, 219, 254, 0.8) 30%, rgba(191, 219, 254, 0.3) 60%, transparent 80%)',
+          borderRadius: '70px',
+          filter: 'blur(32px)',
+          animation: 'cloudFloat3 18s ease-in-out infinite',
+          animationDelay: '10s',
+          boxShadow: isDarkMode 
+            ? '0 0 90px rgba(147, 197, 253, 1.0), 0 0 170px rgba(147, 197, 253, 0.8), 0 0 250px rgba(147, 197, 253, 0.5)'
+            : '0 0 65px rgba(191, 219, 254, 1.1), 0 0 130px rgba(191, 219, 254, 0.9), 0 0 195px rgba(191, 219, 254, 0.6)'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '65%',
+          right: '25%',
+          width: '220px',
+          height: '130px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse, rgba(244, 114, 182, 0.7) 0%, rgba(244, 114, 182, 0.4) 30%, rgba(244, 114, 182, 0.1) 60%, transparent 80%)'
+            : 'radial-gradient(ellipse, rgba(251, 207, 232, 1.05) 0%, rgba(251, 207, 232, 0.7) 30%, rgba(251, 207, 232, 0.25) 60%, transparent 80%)',
+          borderRadius: '85px',
+          filter: 'blur(38px)',
+          animation: 'cloudFloat4 22s ease-in-out infinite',
+          animationDelay: '3s',
+          boxShadow: isDarkMode 
+            ? '0 0 95px rgba(244, 114, 182, 0.8), 0 0 175px rgba(244, 114, 182, 0.6), 0 0 255px rgba(244, 114, 182, 0.3)'
+            : '0 0 68px rgba(251, 207, 232, 1.0), 0 0 135px rgba(251, 207, 232, 0.8), 0 0 200px rgba(251, 207, 232, 0.5)'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '8%',
+          right: '20%',
+          width: '160px',
+          height: '90px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse, rgba(124, 58, 237, 0.8) 0%, rgba(124, 58, 237, 0.5) 30%, rgba(124, 58, 237, 0.15) 60%, transparent 80%)'
+            : 'radial-gradient(ellipse, rgba(221, 214, 254, 0.95) 0%, rgba(221, 214, 254, 0.65) 30%, rgba(221, 214, 254, 0.2) 60%, transparent 80%)',
+          borderRadius: '65px',
+          filter: 'blur(30px)',
+          animation: 'cloudFloat5 16s ease-in-out infinite',
+          animationDelay: '8s',
+          boxShadow: isDarkMode 
+            ? '0 0 85px rgba(124, 58, 237, 0.9), 0 0 155px rgba(124, 58, 237, 0.7), 0 0 225px rgba(124, 58, 237, 0.4)'
+            : '0 0 55px rgba(221, 214, 254, 0.9), 0 0 110px rgba(221, 214, 254, 0.7), 0 0 165px rgba(221, 214, 254, 0.5)'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          bottom: '10%',
+          right: '5%',
+          width: '210px',
+          height: '125px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse, rgba(139, 92, 246, 0.8) 0%, rgba(139, 92, 246, 0.5) 30%, rgba(139, 92, 246, 0.12) 60%, transparent 80%)'
+            : 'radial-gradient(ellipse, rgba(233, 213, 255, 1.0) 0%, rgba(233, 213, 255, 0.7) 30%, rgba(233, 213, 255, 0.25) 60%, transparent 80%)',
+          borderRadius: '80px',
+          filter: 'blur(36px)',
+          animation: 'cloudFloat6 24s ease-in-out infinite',
+          animationDelay: '12s',
+          boxShadow: isDarkMode 
+            ? '0 0 98px rgba(139, 92, 246, 0.9), 0 0 185px rgba(139, 92, 246, 0.7), 0 0 270px rgba(139, 92, 246, 0.4)'
+            : '0 0 70px rgba(233, 213, 255, 1.0), 0 0 140px rgba(233, 213, 255, 0.8), 0 0 210px rgba(233, 213, 255, 0.5)'
+        }}></div>
+
         {/* Additional night sky elements for dark mode */}
         {isDarkMode && (
           <>
@@ -247,6 +355,358 @@ export default function Home() {
             : '0 0 40px rgba(124, 58, 237, 0.6), 0 0 80px rgba(196, 181, 253, 0.4)',
           animation: 'star6 16s ease-in-out infinite'
         }}></div>
+        
+        {/* Additional twinkling stars */}
+        <div style={{
+          position: 'absolute',
+          top: '35%',
+          left: '5%',
+          width: '15px',
+          height: '15px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(147, 197, 253, 0.6) 100%)'
+            : 'radial-gradient(circle, rgba(147, 197, 253, 0.7) 0%, rgba(191, 219, 254, 0.4) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 35px rgba(255, 255, 255, 0.8), 0 0 70px rgba(147, 197, 253, 0.6)'
+            : '0 0 25px rgba(147, 197, 253, 0.6), 0 0 50px rgba(191, 219, 254, 0.4)',
+          animation: 'star7 13s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '55%',
+          left: '85%',
+          width: '19px',
+          height: '19px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(244, 114, 182, 0.6) 100%)'
+            : 'radial-gradient(circle, rgba(236, 72, 153, 0.7) 0%, rgba(252, 231, 243, 0.4) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 45px rgba(255, 255, 255, 0.9), 0 0 90px rgba(244, 114, 182, 0.6)'
+            : '0 0 30px rgba(236, 72, 153, 0.6), 0 0 60px rgba(252, 231, 243, 0.4)',
+          animation: 'star8 19s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          bottom: '45%',
+          left: '3%',
+          width: '13px',
+          height: '13px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(139, 92, 246, 0.5) 100%)'
+            : 'radial-gradient(circle, rgba(124, 58, 237, 0.6) 0%, rgba(233, 213, 255, 0.4) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(139, 92, 246, 0.5)'
+            : '0 0 20px rgba(124, 58, 237, 0.5), 0 0 40px rgba(233, 213, 255, 0.4)',
+          animation: 'star9 11s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '80%',
+          right: '45%',
+          width: '17px',
+          height: '17px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(219, 39, 119, 0.5) 100%)'
+            : 'radial-gradient(circle, rgba(244, 114, 182, 0.6) 0%, rgba(251, 207, 232, 0.4) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(219, 39, 119, 0.5)'
+            : '0 0 28px rgba(244, 114, 182, 0.5), 0 0 56px rgba(251, 207, 232, 0.4)',
+          animation: 'star10 17s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '10%',
+          left: '60%',
+          width: '21px',
+          height: '21px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(147, 51, 234, 0.6) 100%)'
+            : 'radial-gradient(circle, rgba(139, 92, 246, 0.7) 0%, rgba(196, 181, 253, 0.4) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 55px rgba(255, 255, 255, 0.9), 0 0 110px rgba(147, 51, 234, 0.6)'
+            : '0 0 38px rgba(139, 92, 246, 0.6), 0 0 76px rgba(196, 181, 253, 0.4)',
+          animation: 'star11 21s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          bottom: '70%',
+          right: '8%',
+          width: '11px',
+          height: '11px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(168, 85, 247, 0.5) 100%)'
+            : 'radial-gradient(circle, rgba(167, 139, 250, 0.6) 0%, rgba(221, 214, 254, 0.4) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 25px rgba(255, 255, 255, 0.6), 0 0 50px rgba(168, 85, 247, 0.5)'
+            : '0 0 18px rgba(167, 139, 250, 0.5), 0 0 36px rgba(221, 214, 254, 0.4)',
+          animation: 'star12 9s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '90%',
+          left: '25%',
+          width: '24px',
+          height: '24px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(236, 72, 153, 0.7) 100%)'
+            : 'radial-gradient(circle, rgba(219, 39, 119, 0.7) 0%, rgba(248, 180, 217, 0.4) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 60px rgba(255, 255, 255, 1), 0 0 120px rgba(236, 72, 153, 0.7)'
+            : '0 0 42px rgba(219, 39, 119, 0.6), 0 0 84px rgba(248, 180, 217, 0.4)',
+          animation: 'star13 23s ease-in-out infinite'
+        }}></div>
+        
+        {/* Mystical will o' the wisps */}
+        <div style={{
+          position: 'absolute',
+          top: '20%',
+          left: '10%',
+          width: '8px',
+          height: '8px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(173, 216, 230, 1) 0%, rgba(135, 206, 235, 0.8) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(135, 206, 235, 0.9) 0%, rgba(173, 216, 230, 0.6) 50%, transparent 100%)',
+          borderRadius: '50%',
+          boxShadow: isDarkMode 
+            ? '0 0 20px rgba(173, 216, 230, 0.9), 0 0 40px rgba(135, 206, 235, 0.7), 0 0 60px rgba(173, 216, 230, 0.4)'
+            : '0 0 15px rgba(135, 206, 235, 0.8), 0 0 30px rgba(173, 216, 230, 0.6), 0 0 45px rgba(173, 216, 230, 0.3)',
+          filter: 'blur(1px)',
+          animation: 'wisp1 12s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '60%',
+          right: '15%',
+          width: '6px',
+          height: '6px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 182, 193, 1) 0%, rgba(255, 192, 203, 0.8) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(255, 182, 193, 0.8) 0%, rgba(255, 192, 203, 0.5) 50%, transparent 100%)',
+          borderRadius: '50%',
+          boxShadow: isDarkMode 
+            ? '0 0 18px rgba(255, 182, 193, 0.9), 0 0 35px rgba(255, 192, 203, 0.7), 0 0 50px rgba(255, 192, 203, 0.4)'
+            : '0 0 12px rgba(255, 182, 193, 0.7), 0 0 25px rgba(255, 192, 203, 0.5), 0 0 38px rgba(255, 192, 203, 0.2)',
+          filter: 'blur(0.8px)',
+          animation: 'wisp2 15s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          bottom: '30%',
+          left: '25%',
+          width: '10px',
+          height: '10px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(221, 160, 221, 1) 0%, rgba(186, 85, 211, 0.8) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(186, 85, 211, 0.8) 0%, rgba(221, 160, 221, 0.6) 50%, transparent 100%)',
+          borderRadius: '50%',
+          boxShadow: isDarkMode 
+            ? '0 0 25px rgba(221, 160, 221, 0.9), 0 0 50px rgba(186, 85, 211, 0.7), 0 0 75px rgba(221, 160, 221, 0.4)'
+            : '0 0 18px rgba(186, 85, 211, 0.7), 0 0 35px rgba(221, 160, 221, 0.5), 0 0 52px rgba(221, 160, 221, 0.3)',
+          filter: 'blur(1.2px)',
+          animation: 'wisp3 18s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '35%',
+          left: '70%',
+          width: '7px',
+          height: '7px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(196, 181, 253, 1) 0%, rgba(147, 112, 219, 0.8) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(152, 251, 152, 0.7) 0%, rgba(144, 238, 144, 0.5) 50%, transparent 100%)',
+          borderRadius: '50%',
+          boxShadow: isDarkMode 
+            ? '0 0 22px rgba(196, 181, 253, 0.9), 0 0 44px rgba(147, 112, 219, 0.7), 0 0 66px rgba(147, 112, 219, 0.4)'
+            : '0 0 14px rgba(152, 251, 152, 0.6), 0 0 28px rgba(144, 238, 144, 0.4), 0 0 42px rgba(144, 238, 144, 0.2)',
+          filter: 'blur(0.9px)',
+          animation: 'wisp4 14s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          bottom: '15%',
+          right: '30%',
+          width: '9px',
+          height: '9px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 218, 185, 1) 0%, rgba(255, 192, 203, 0.8) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(255, 228, 196, 0.8) 0%, rgba(255, 218, 185, 0.5) 50%, transparent 100%)',
+          borderRadius: '50%',
+          boxShadow: isDarkMode 
+            ? '0 0 24px rgba(255, 218, 185, 0.9), 0 0 48px rgba(255, 192, 203, 0.7), 0 0 72px rgba(255, 192, 203, 0.4)'
+            : '0 0 16px rgba(255, 228, 196, 0.7), 0 0 32px rgba(255, 218, 185, 0.4), 0 0 48px rgba(255, 218, 185, 0.2)',
+          filter: 'blur(1px)',
+          animation: 'wisp5 20s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '75%',
+          left: '45%',
+          width: '5px',
+          height: '5px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(230, 230, 250, 1) 0%, rgba(221, 160, 221, 0.8) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(230, 230, 250, 0.7) 0%, rgba(230, 230, 250, 0.4) 50%, transparent 100%)',
+          borderRadius: '50%',
+          boxShadow: isDarkMode 
+            ? '0 0 15px rgba(230, 230, 250, 0.9), 0 0 30px rgba(221, 160, 221, 0.7), 0 0 45px rgba(221, 160, 221, 0.4)'
+            : '0 0 10px rgba(230, 230, 250, 0.6), 0 0 20px rgba(230, 230, 250, 0.3), 0 0 30px rgba(230, 230, 250, 0.1)',
+          filter: 'blur(0.7px)',
+          animation: 'wisp6 16s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '45%',
+          left: '5%',
+          width: '11px',
+          height: '11px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(175, 238, 238, 1) 0%, rgba(173, 216, 230, 0.8) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(175, 238, 238, 0.9) 0%, rgba(175, 238, 238, 0.6) 50%, transparent 100%)',
+          borderRadius: '50%',
+          boxShadow: isDarkMode 
+            ? '0 0 28px rgba(175, 238, 238, 0.9), 0 0 55px rgba(173, 216, 230, 0.7), 0 0 80px rgba(173, 216, 230, 0.4)'
+            : '0 0 20px rgba(175, 238, 238, 0.8), 0 0 40px rgba(175, 238, 238, 0.5), 0 0 60px rgba(175, 238, 238, 0.3)',
+          filter: 'blur(1.3px)',
+          animation: 'wisp7 22s ease-in-out infinite'
+        }}></div>
+
+        {/* Additional twinkling stars */}
+        <div style={{
+          position: 'absolute',
+          top: '35%',
+          left: '8%',
+          width: '8px',
+          height: '8px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(168, 85, 247, 0.4) 100%)'
+            : 'radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, rgba(196, 181, 253, 0.3) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(168, 85, 247, 0.4)'
+            : '0 0 15px rgba(139, 92, 246, 0.6), 0 0 30px rgba(196, 181, 253, 0.3)',
+          animation: 'twinkle1 3s ease-in-out infinite'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '55%',
+          right: '12%',
+          width: '6px',
+          height: '6px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(236, 72, 153, 0.5) 100%)'
+            : 'radial-gradient(circle, rgba(244, 114, 182, 0.7) 0%, rgba(251, 207, 232, 0.3) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 18px rgba(255, 255, 255, 0.7), 0 0 35px rgba(236, 72, 153, 0.4)'
+            : '0 0 12px rgba(244, 114, 182, 0.5), 0 0 25px rgba(251, 207, 232, 0.3)',
+          animation: 'twinkle2 4s ease-in-out infinite',
+          animationDelay: '1s'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          bottom: '45%',
+          left: '85%',
+          width: '10px',
+          height: '10px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(124, 58, 237, 0.6) 100%)'
+            : 'radial-gradient(circle, rgba(167, 139, 250, 0.8) 0%, rgba(221, 214, 254, 0.4) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(124, 58, 237, 0.5)'
+            : '0 0 18px rgba(167, 139, 250, 0.6), 0 0 35px rgba(221, 214, 254, 0.4)',
+          animation: 'twinkle3 2.5s ease-in-out infinite',
+          animationDelay: '0.5s'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '85%',
+          left: '25%',
+          width: '7px',
+          height: '7px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(147, 51, 234, 0.5) 100%)'
+            : 'radial-gradient(circle, rgba(139, 92, 246, 0.7) 0%, rgba(233, 213, 255, 0.3) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 22px rgba(255, 255, 255, 0.8), 0 0 45px rgba(147, 51, 234, 0.4)'
+            : '0 0 14px rgba(139, 92, 246, 0.5), 0 0 28px rgba(233, 213, 255, 0.3)',
+          animation: 'twinkle4 3.5s ease-in-out infinite',
+          animationDelay: '2s'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '12%',
+          left: '45%',
+          width: '9px',
+          height: '9px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(219, 39, 119, 0.6) 100%)'
+            : 'radial-gradient(circle, rgba(236, 72, 153, 0.8) 0%, rgba(252, 231, 243, 0.4) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 24px rgba(255, 255, 255, 0.8), 0 0 48px rgba(219, 39, 119, 0.5)'
+            : '0 0 16px rgba(236, 72, 153, 0.6), 0 0 32px rgba(252, 231, 243, 0.4)',
+          animation: 'twinkle5 4.2s ease-in-out infinite',
+          animationDelay: '1.5s'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          bottom: '65%',
+          right: '45%',
+          width: '5px',
+          height: '5px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(168, 85, 247, 0.4) 100%)'
+            : 'radial-gradient(circle, rgba(196, 181, 253, 0.6) 0%, rgba(233, 213, 255, 0.2) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(168, 85, 247, 0.3)'
+            : '0 0 10px rgba(196, 181, 253, 0.4), 0 0 20px rgba(233, 213, 255, 0.2)',
+          animation: 'twinkle6 2.8s ease-in-out infinite',
+          animationDelay: '0.8s'
+        }}></div>
+        
+        <div style={{
+          position: 'absolute',
+          top: '78%',
+          right: '15%',
+          width: '11px',
+          height: '11px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(147, 197, 253, 0.7) 100%)'
+            : 'radial-gradient(circle, rgba(191, 219, 254, 0.9) 0%, rgba(147, 197, 253, 0.5) 100%)',
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          boxShadow: isDarkMode 
+            ? '0 0 28px rgba(255, 255, 255, 0.9), 0 0 55px rgba(147, 197, 253, 0.6)'
+            : '0 0 20px rgba(191, 219, 254, 0.7), 0 0 40px rgba(147, 197, 253, 0.5)',
+          animation: 'twinkle7 3.8s ease-in-out infinite',
+          animationDelay: '2.5s'
+        }}></div>
       </div>
 
       {/* Main content */}
@@ -273,11 +733,13 @@ export default function Home() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            textAlign: 'center'
+            textAlign: 'center',
+            width: '100%',
+            maxWidth: '400px'
           }}>
             {/* Profile Image */}
             <div style={{
-              marginBottom: '1px',
+              marginBottom: '24px',
               position: 'relative',
               display: 'inline-block'
             }}>
@@ -355,7 +817,7 @@ export default function Home() {
               <p style={{
                 fontSize: '1.2rem',
                 color: isDarkMode ? '#b39ddb' : '#7C6FBE',
-                margin: '0',
+                margin: '0.2rem 0',
                 fontWeight: '600',
                 lineHeight: '1.5',
                 whiteSpace: 'normal',
@@ -363,7 +825,7 @@ export default function Home() {
                 textAlign: 'center',
                 width: '100%'
               }}>
-                cs + stats + ling @ ucla
+                cs + stats @ ucla
               </p>
             </div>
 
@@ -374,8 +836,9 @@ export default function Home() {
               gap: '12px',
               width: '100%',
               maxWidth: '250px',
-              alignItems: 'center'
-            }}>
+              alignItems: 'center',
+              justifyContent: 'center'
+            }} className="button-container">
               {[
                 { icon: Mail, label: 'Email', href: 'mailto:aliciayu@g.ucla.edu' },
                 { icon: FileText, label: 'Resume', href: 'https://drive.google.com/file/d/1548yYWGyIUUR3waotPBRsMFB4XipRdRA/view?usp=sharing' },
@@ -575,6 +1038,112 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
           75% { transform: translateY(-12px) translateX(10px); }
         }
         
+        @keyframes cloudFloat1 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.8;
+          }
+          25% { 
+            transform: translateY(-30px) translateX(40px) scale(1.1);
+            opacity: 1;
+          }
+          50% { 
+            transform: translateY(-15px) translateX(-20px) scale(0.9);
+            opacity: 0.7;
+          }
+          75% { 
+            transform: translateY(-45px) translateX(60px) scale(1.05);
+            opacity: 0.9;
+          }
+        }
+        
+        @keyframes cloudFloat2 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.9;
+          }
+          30% { 
+            transform: translateY(-25px) translateX(-50px) scale(1.15);
+            opacity: 1;
+          }
+          60% { 
+            transform: translateY(-40px) translateX(30px) scale(0.85);
+            opacity: 0.6;
+          }
+          90% { 
+            transform: translateY(-10px) translateX(-70px) scale(1.1);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes cloudFloat3 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.7;
+          }
+          35% { 
+            transform: translateY(-35px) translateX(45px) scale(0.9);
+            opacity: 1;
+          }
+          70% { 
+            transform: translateY(-20px) translateX(-25px) scale(1.2);
+            opacity: 0.8;
+          }
+        }
+        
+        @keyframes cloudFloat4 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.8;
+          }
+          40% { 
+            transform: translateY(-28px) translateX(-35px) scale(1.08);
+            opacity: 1;
+          }
+          80% { 
+            transform: translateY(-50px) translateX(55px) scale(0.95);
+            opacity: 0.6;
+          }
+        }
+        
+        @keyframes cloudFloat5 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.9;
+          }
+          20% { 
+            transform: translateY(-40px) translateX(25px) scale(0.8);
+            opacity: 0.7;
+          }
+          50% { 
+            transform: translateY(-15px) translateX(-40px) scale(1.3);
+            opacity: 1;
+          }
+          80% { 
+            transform: translateY(-32px) translateX(15px) scale(1.05);
+            opacity: 0.8;
+          }
+        }
+        
+        @keyframes cloudFloat6 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.8;
+          }
+          25% { 
+            transform: translateY(-22px) translateX(-45px) scale(1.12);
+            opacity: 1;
+          }
+          50% { 
+            transform: translateY(-38px) translateX(35px) scale(0.88);
+            opacity: 0.7;
+          }
+          75% { 
+            transform: translateY(-12px) translateX(-60px) scale(1.07);
+            opacity: 0.9;
+          }
+        }
+        
         @keyframes star1 {
           0%, 100% { 
             transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
@@ -681,6 +1250,248 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
           }
         }
         
+        @keyframes star7 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+            opacity: 0.4;
+          }
+          30% { 
+            transform: translateY(-40px) translateX(30px) scale(1.6) rotate(90deg);
+            opacity: 0.9;
+          }
+          60% { 
+            transform: translateY(-15px) translateX(-25px) scale(0.9) rotate(180deg);
+            opacity: 0.7;
+          }
+          90% { 
+            transform: translateY(-55px) translateX(15px) scale(1.2) rotate(270deg);
+            opacity: 0.6;
+          }
+        }
+        
+        @keyframes star8 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+            opacity: 0.5;
+          }
+          25% { 
+            transform: translateY(-30px) translateX(-20px) scale(0.8) rotate(95deg);
+            opacity: 0.8;
+          }
+          50% { 
+            transform: translateY(-50px) translateX(35px) scale(1.7) rotate(190deg);
+            opacity: 1;
+          }
+          75% { 
+            transform: translateY(-20px) translateX(-40px) scale(1.1) rotate(285deg);
+            opacity: 0.6;
+          }
+        }
+        
+        @keyframes star9 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+            opacity: 0.3;
+          }
+          40% { 
+            transform: translateY(-35px) translateX(20px) scale(1.4) rotate(110deg);
+            opacity: 0.9;
+          }
+          80% { 
+            transform: translateY(-25px) translateX(-30px) scale(0.7) rotate(220deg);
+            opacity: 0.5;
+          }
+        }
+        
+        @keyframes star10 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+            opacity: 0.6;
+          }
+          35% { 
+            transform: translateY(-45px) translateX(-15px) scale(1.3) rotate(85deg);
+            opacity: 1;
+          }
+          70% { 
+            transform: translateY(-10px) translateX(45px) scale(1.8) rotate(170deg);
+            opacity: 0.8;
+          }
+        }
+        
+        @keyframes star11 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+            opacity: 0.5;
+          }
+          20% { 
+            transform: translateY(-25px) translateX(25px) scale(0.9) rotate(75deg);
+            opacity: 0.7;
+          }
+          45% { 
+            transform: translateY(-60px) translateX(-35px) scale(1.6) rotate(150deg);
+            opacity: 1;
+          }
+          80% { 
+            transform: translateY(-40px) translateX(10px) scale(1.1) rotate(225deg);
+            opacity: 0.6;
+          }
+        }
+        
+        @keyframes star12 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+            opacity: 0.4;
+          }
+          50% { 
+            transform: translateY(-30px) translateX(-20px) scale(1.5) rotate(180deg);
+            opacity: 0.9;
+          }
+        }
+        
+        @keyframes star13 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+            opacity: 0.7;
+          }
+          25% { 
+            transform: translateY(-50px) translateX(40px) scale(0.8) rotate(92deg);
+            opacity: 0.9;
+          }
+          50% { 
+            transform: translateY(-20px) translateX(-45px) scale(1.9) rotate(184deg);
+            opacity: 1;
+          }
+          75% { 
+            transform: translateY(-65px) translateX(20px) scale(1.2) rotate(276deg);
+            opacity: 0.8;
+          }
+        }
+        
+        @keyframes wisp1 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.3;
+          }
+          25% { 
+            transform: translateY(-80px) translateX(60px) scale(1.5);
+            opacity: 0.8;
+          }
+          50% { 
+            transform: translateY(-40px) translateX(-30px) scale(0.7);
+            opacity: 1;
+          }
+          75% { 
+            transform: translateY(-120px) translateX(90px) scale(1.2);
+            opacity: 0.6;
+          }
+        }
+        
+        @keyframes wisp2 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.4;
+          }
+          30% { 
+            transform: translateY(-60px) translateX(-50px) scale(1.3);
+            opacity: 0.9;
+          }
+          60% { 
+            transform: translateY(-100px) translateX(40px) scale(0.8);
+            opacity: 0.7;
+          }
+          90% { 
+            transform: translateY(-30px) translateX(-80px) scale(1.1);
+            opacity: 0.5;
+          }
+        }
+        
+        @keyframes wisp3 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.5;
+          }
+          20% { 
+            transform: translateY(-90px) translateX(30px) scale(0.6);
+            opacity: 0.7;
+          }
+          45% { 
+            transform: translateY(-50px) translateX(-70px) scale(1.4);
+            opacity: 1;
+          }
+          70% { 
+            transform: translateY(-140px) translateX(100px) scale(0.9);
+            opacity: 0.8;
+          }
+        }
+        
+        @keyframes wisp4 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.3;
+          }
+          35% { 
+            transform: translateY(-70px) translateX(-40px) scale(1.6);
+            opacity: 0.9;
+          }
+          65% { 
+            transform: translateY(-110px) translateX(20px) scale(0.5);
+            opacity: 0.6;
+          }
+        }
+        
+        @keyframes wisp5 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.4;
+          }
+          25% { 
+            transform: translateY(-50px) translateX(80px) scale(1.2);
+            opacity: 0.8;
+          }
+          50% { 
+            transform: translateY(-130px) translateX(-60px) scale(0.7);
+            opacity: 1;
+          }
+          75% { 
+            transform: translateY(-80px) translateX(120px) scale(1.3);
+            opacity: 0.6;
+          }
+        }
+        
+        @keyframes wisp6 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.2;
+          }
+          40% { 
+            transform: translateY(-95px) translateX(-90px) scale(1.4);
+            opacity: 0.7;
+          }
+          80% { 
+            transform: translateY(-40px) translateX(110px) scale(0.8);
+            opacity: 0.9;
+          }
+        }
+        
+        @keyframes wisp7 {
+          0%, 100% { 
+            transform: translateY(0px) translateX(0px) scale(1);
+            opacity: 0.5;
+          }
+          30% { 
+            transform: translateY(-100px) translateX(70px) scale(0.6);
+            opacity: 0.8;
+          }
+          60% { 
+            transform: translateY(-160px) translateX(-50px) scale(1.5);
+            opacity: 1;
+          }
+          90% { 
+            transform: translateY(-70px) translateX(140px) scale(1.1);
+            opacity: 0.7;
+          }
+        }
+        
         @keyframes neonFlicker {
           0%, 100% {
             text-shadow: 0 0 5px rgba(168, 85, 247, 0.8), 0 0 10px rgba(168, 85, 247, 0.6), 0 0 15px rgba(168, 85, 247, 0.4), 0 0 20px rgba(236, 72, 153, 0.6), 0 0 30px rgba(236, 72, 153, 0.4), 0 0 40px rgba(147, 51, 234, 0.3);
@@ -733,23 +1544,41 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
         }
         
         @media (max-width: 600px) {
+          .desktop-horizontal > div:first-child {
+            align-items: center !important;
+            margin: 0 auto !important;
+            width: 100% !important;
+          }
+          
           .desktop-horizontal > div:first-child > div:last-child {
             flex-direction: column !important;
             align-items: center !important;
+            justify-content: center !important;
             width: 100% !important;
-            max-width: 280px !important;
+            margin: 0 auto !important;
           }
           
           .desktop-horizontal > div:first-child > div:last-child > a {
-            width: 100% !important;
+            width: 200px !important;
             justify-content: center !important;
             padding: 12px 20px !important;
             text-align: center !important;
+            margin: 0 auto !important;
           }
         }
         
         @media (max-width: 480px) {
-          h1 { font-size: 3rem !important; }
+          h1 { 
+            font-size: 3rem !important; 
+            width: 100% !important;
+            margin: 0 0 8px 0 !important;
+          }
+          
+          .desktop-horizontal > div:first-child {
+            align-items: center !important;
+            margin: 0 auto !important;
+            width: 100% !important;
+          }
         }
       `}</style>
     </div>
