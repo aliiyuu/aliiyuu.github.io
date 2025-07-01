@@ -935,6 +935,7 @@ export default function Home() {
                 lineHeight: '1.6',
                 fontSize: '1rem',
                 margin: 0,
+                paddingBottom: '1.5rem',
                 whiteSpace: 'pre-line'
               }}>
                 {`Hi, I'm Alicia! I'm a fourth-year computer science student at UCLA with a passion for building AI-powered solutions that are not only technically robust, but also ethical, accessible, and impactful. I've developed full-stack applications using frameworks like React, Next.js, and TypeScript, and worked with data science tools such as PyTorch, scikit-learn, and Pandas to create tangible solutions. From crafting LLM-powered chatbots with persistent memory to engineering OCR pipelines that support healthcare providers, I am driven by the intersection of smart technology and practical impact.
@@ -981,6 +982,7 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
                 color: isDarkMode ? '#b39ddb' : '#7C6FBE',
                 lineHeight: '1.6',
                 fontSize: '1rem',
+                paddingBottom: '1.5rem',
                 margin: 0
               }}>
                 Exploring LLM-aided data storage and migration solutions @ <a href="https://www.avepoint.com/" target="_blank" rel="noopener noreferrer" style={{ color: isDarkMode ? '#d1c4e9' : '#7C6FBE', fontWeight: 'bold', textDecoration: 'underline' }}>AvePoint</a>
@@ -1021,6 +1023,7 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
                 color: isDarkMode ? '#b39ddb' : '#7C6FBE',
                 lineHeight: '1.6',
                 fontSize: '1rem',
+                paddingBottom: '1.5rem',
                 margin: 0
               }}>
                 <a href="https://www.youtube.com/watch?v=lzMkFIw8ETM" target="_blank" rel="noopener noreferrer" style={{ color: isDarkMode ? '#d1c4e9' : '#7C6FBE', fontWeight: 'bold', textDecoration: 'underline' }}>Knock Yourself Out XD</a> by Porter Robinson
