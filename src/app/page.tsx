@@ -835,11 +835,12 @@ export default function Home() {
               flexDirection: 'column',
               gap: '12px',
               width: '100%',
-              maxWidth: '250px',
+              maxWidth: 'min(250px, calc(100vw - 60px))',
               alignItems: 'center',
-              justifyContent: 'center'
-            }} className="button-container">
-              {[
+              justifyContent: 'center',
+              padding: '0 20px',
+              boxSizing: 'border-box'
+            }} className="button-container">{[
                 { icon: Mail, label: 'Email', href: 'mailto:aliciayu@g.ucla.edu' },
                 { icon: FileText, label: 'Resume', href: 'https://drive.google.com/file/d/1548yYWGyIUUR3waotPBRsMFB4XipRdRA/view?usp=sharing' },
                 { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/alliciayu' },
@@ -873,7 +874,13 @@ export default function Home() {
                     backdropFilter: 'blur(10px)',
                     fontSize: '0.95rem',
                     width: '100%',
-                    textAlign: 'center'
+                    maxWidth: '100%',
+                    minWidth: '0',
+                    textAlign: 'center',
+                    boxSizing: 'border-box',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-2px)';
@@ -919,7 +926,21 @@ export default function Home() {
                 ? '1px solid rgba(168, 85, 247, 0.3)' 
                 : '1px solid rgba(196, 181, 253, 0.4)',
               backdropFilter: 'blur(10px)',
-              textAlign: 'left'
+              textAlign: 'left',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)';
+              e.currentTarget.style.boxShadow = isDarkMode 
+                ? '0 12px 40px rgba(168, 85, 247, 0.25)' 
+                : '0 12px 40px rgba(139, 92, 246, 0.18)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = isDarkMode 
+                ? '0 8px 32px rgba(168, 85, 247, 0.15)' 
+                : '0 8px 32px rgba(139, 92, 246, 0.12)';
             }}>
               <h2 style={{
                 fontSize: '1.5rem',
@@ -947,7 +968,7 @@ In my spare time, I enjoy creative writing, language learning, and graphic desig
 Thanks for stopping by! I'm excited to keep learning, building, and pushing for technology that empowers.`}
               </p>
             </div>
-
+              <p></p>
             {/* What I'm Up To Section */}
             <div style={{
               backgroundColor: isDarkMode 
@@ -963,7 +984,21 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
                 ? '1px solid rgba(168, 85, 247, 0.3)' 
                 : '1px solid rgba(196, 181, 253, 0.4)',
               backdropFilter: 'blur(10px)',
-              textAlign: 'left'
+              textAlign: 'left',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)';
+              e.currentTarget.style.boxShadow = isDarkMode 
+                ? '0 12px 40px rgba(168, 85, 247, 0.25)' 
+                : '0 12px 40px rgba(139, 92, 246, 0.18)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = isDarkMode 
+                ? '0 8px 32px rgba(168, 85, 247, 0.15)' 
+                : '0 8px 32px rgba(139, 92, 246, 0.12)';
             }}>
               <h2 style={{
                 fontSize: '1.3rem',
@@ -988,7 +1023,7 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
                 Exploring LLM-aided data storage and migration solutions @ <a href="https://www.avepoint.com/" target="_blank" rel="noopener noreferrer" style={{ color: isDarkMode ? '#d1c4e9' : '#7C6FBE', fontWeight: 'bold', textDecoration: 'underline' }}>AvePoint</a>
               </p>
             </div>
-
+              <p></p>
             {/* What I'm Listening To Section */}
             <div style={{
               backgroundColor: isDarkMode 
@@ -1004,7 +1039,21 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
                 ? '1px solid rgba(168, 85, 247, 0.3)' 
                 : '1px solid rgba(196, 181, 253, 0.4)',
               backdropFilter: 'blur(10px)',
-              textAlign: 'left'
+              textAlign: 'left',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)';
+              e.currentTarget.style.boxShadow = isDarkMode 
+                ? '0 12px 40px rgba(168, 85, 247, 0.25)' 
+                : '0 12px 40px rgba(139, 92, 246, 0.18)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = isDarkMode 
+                ? '0 8px 32px rgba(168, 85, 247, 0.15)' 
+                : '0 8px 32px rgba(139, 92, 246, 0.12)';
             }}>
               <h2 style={{
                 fontSize: '1.3rem',
@@ -1418,7 +1467,7 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
             opacity: 0.7;
           }
           45% { 
-            transform: translateY(-50px) translateX(-70px) scale(1.4);
+            transform: translateY(-60px) translateX(-70px) scale(1.4);
             opacity: 1;
           }
           70% { 
@@ -1542,6 +1591,19 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
           }
         }
         
+        /* Universal profile picture fix to ensure it's always circular */
+        .profile-container > div {
+          aspect-ratio: 1 !important;
+        }
+        
+        @media (min-width: 481px) and (max-width: 800px) {
+          /* Fix for medium screens like 683px where oval issues occur */
+          .profile-container > div {
+            width: min(240px, calc(100vw - 100px)) !important;
+            height: min(240px, calc(100vw - 100px)) !important;
+          }
+        }
+        
         @media (max-width: 768px) {
           h1 { font-size: 3.5rem !important; }
         }
@@ -1593,12 +1655,55 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
             max-width: none !important;
             width: 100% !important;
           }
+          
+          /* Ensure button container fits within screen */
+          .button-container {
+            max-width: calc(100vw - 40px) !important;
+            padding: 0 5px !important;
+          }
+          
+          .button-container a {
+            max-width: 180px !important;
+            padding: 10px 15px !important;
+            font-size: 0.9rem !important;
+          }
+          
+          /* Ensure profile picture always fits within screen boundaries */
+          .profile-container {
+            padding: 0 15px !important;
+          }
+          
+          .profile-container > div {
+            width: min(200px, calc(100vw - 60px)) !important;
+            height: min(200px, calc(100vw - 60px)) !important;
+          }
         }
         
         @media (max-width: 375px) {
           /* Even smaller margins for very small screens */
           .main-container {
             padding: 40px 8px !important;
+          }
+          
+          /* Ensure button container fits within very small screens */
+          .button-container {
+            max-width: calc(100vw - 20px) !important;
+            padding: 0 2px !important;
+          }
+          
+          .button-container a {
+            max-width: 160px !important;
+            padding: 8px 12px !important;
+            font-size: 0.85rem !important;
+          }
+          
+          .profile-container {
+            padding: 0 10px !important;
+          }
+          
+          .profile-container > div {
+            width: min(180px, calc(100vw - 40px)) !important;
+            height: min(180px, calc(100vw - 40px)) !important;
           }
         }
         
@@ -1607,23 +1712,56 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
           .main-container {
             padding: 30px 6px !important;
           }
+          
+          /* Ensure button container fits within extremely narrow screens */
+          .button-container {
+            max-width: calc(100vw - 16px) !important;
+            padding: 0 !important;
+          }
+          
+          .button-container a {
+            max-width: 140px !important;
+            padding: 8px 10px !important;
+            font-size: 0.8rem !important;
+          }
+          
+          .profile-container {
+            padding: 0 8px !important;
+          }
+          
+          .profile-container > div {
+            max-width: calc(100vw - 32px) !important;
+            max-height: calc(100vw - 32px) !important;
+          }
+          
+          .button-container {
+            padding: 0 8px !important;
+            max-width: calc(100vw - 32px) !important;
+          }
+          
+          .button-container a {
+            padding: 10px 15px !important;
+            font-size: 0.85rem !important;
+            gap: 8px !important;
+          }
         }
         
+        /* Portrait orientation optimizations */
         @media (orientation: portrait) and (max-width: 414px) {
-          /* Extra space for portrait narrow screens */
-          .main-container {
-            padding: 50px 10px !important;
+          .profile-container > div {
+            width: min(200px, calc(100vw - 80px)) !important;
+            height: min(200px, calc(100vw - 80px)) !important;
           }
           
-          .text-content-container {
-            max-width: none !important;
-            width: 100% !important;
-            margin: 0 !important;
+          .button-container {
+            max-width: calc(100vw - 40px) !important;
+            padding: 0 15px !important;
           }
           
-          .text-content-container > div {
-            margin: 0 !important;
-            padding: 30px 16px !important;
+          .button-container a {
+            max-width: 100% !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
           }
         }
       `}</style>
