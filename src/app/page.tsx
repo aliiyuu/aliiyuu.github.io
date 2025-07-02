@@ -718,7 +718,7 @@ export default function Home() {
         justifyContent: 'center',
         minHeight: '100vh',
         padding: '80px 40px'
-      }}>
+      }} className="main-container">
         <div style={{
           maxWidth: '1400px',
           width: '100%',
@@ -905,7 +905,7 @@ export default function Home() {
           <div style={{
             flex: '1 1 auto',
             maxWidth: '700px'
-          }}>
+          }} className="text-content-container">
             <div style={{
               backgroundColor: isDarkMode 
                 ? 'rgba(45, 27, 61, 0.7)' 
@@ -1581,6 +1581,49 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
             align-items: center !important;
             margin: 0 auto !important;
             width: 100% !important;
+          }
+          
+          /* Reduce main container padding for more horizontal space */
+          .main-container {
+            padding: 60px 16px !important;
+          }
+          
+          /* Allow text boxes to use more width */
+          .text-content-container {
+            max-width: none !important;
+            width: 100% !important;
+          }
+        }
+        
+        @media (max-width: 375px) {
+          /* Even smaller margins for very small screens */
+          .main-container {
+            padding: 40px 8px !important;
+          }
+        }
+        
+        @media (max-width: 320px) {
+          /* Minimal margins for very narrow screens (iPhone SE, etc.) */
+          .main-container {
+            padding: 30px 6px !important;
+          }
+        }
+        
+        @media (orientation: portrait) and (max-width: 414px) {
+          /* Extra space for portrait narrow screens */
+          .main-container {
+            padding: 50px 10px !important;
+          }
+          
+          .text-content-container {
+            max-width: none !important;
+            width: 100% !important;
+            margin: 0 !important;
+          }
+          
+          .text-content-container > div {
+            margin: 0 !important;
+            padding: 30px 16px !important;
           }
         }
       `}</style>
