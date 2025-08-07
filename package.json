@@ -2,12 +2,11 @@
   "name": "aliciayu",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aliiyuu.github.io/aliiyuu.github.io/",
+  "homepage": "https://aliiyuu.github.io/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
-    "predeploy": "npm run build && npm run export",
+    "predeploy": "next build",
     "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
