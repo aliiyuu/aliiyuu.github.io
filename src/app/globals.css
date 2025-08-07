@@ -5,46 +5,354 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Custom animations for whimsical floating elements */
+/* Custom animations */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) translateX(0px) rotate(0deg);
+    transform: translateY(0px) translateX(0px);
   }
   25% {
-    transform: translateY(-20px) translateX(10px) rotate(5deg);
+    transform: translateY(-20px) translateX(10px);
   }
   50% {
-    transform: translateY(-10px) translateX(-5px) rotate(-3deg);
+    transform: translateY(-10px) translateX(-5px);
   }
   75% {
-    transform: translateY(-15px) translateX(15px) rotate(7deg);
+    transform: translateY(-15px) translateX(15px);
   }
 }
 
 @keyframes float-delayed {
   0%, 100% {
-    transform: translateY(0px) translateX(0px) rotate(0deg);
+    transform: translateY(0px) translateX(0px);
   }
   25% {
-    transform: translateY(-15px) translateX(-10px) rotate(-4deg);
+    transform: translateY(-15px) translateX(-10px);
   }
   50% {
-    transform: translateY(-25px) translateX(8px) rotate(6deg);
+    transform: translateY(-25px) translateX(8px);
   }
   75% {
-    transform: translateY(-5px) translateX(-12px) rotate(-2deg);
+    transform: translateY(-5px) translateX(-12px);
   }
 }
 
 @keyframes float-slow {
   0%, 100% {
-    transform: translateY(0px) translateX(0px) rotate(0deg);
+    transform: translateY(0px) translateX(0px);
   }
   33% {
-    transform: translateY(-8px) translateX(12px) rotate(3deg);
+    transform: translateY(-8px) translateX(12px);
   }
   66% {
-    transform: translateY(-18px) translateX(-8px) rotate(-5deg);
+    transform: translateY(-18px) translateX(-8px);
+  }
+}
+
+/* Twinkling stars animations */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8) rotate(0deg);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.2) rotate(90deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1) rotate(180deg);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(1.1) rotate(270deg);
+  }
+}
+
+@keyframes twinkle-delayed {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.7) rotate(0deg);
+  }
+  30% {
+    opacity: 0.9;
+    transform: scale(1.3) rotate(120deg);
+  }
+  60% {
+    opacity: 0.5;
+    transform: scale(0.9) rotate(240deg);
+  }
+  90% {
+    opacity: 0.8;
+    transform: scale(1.1) rotate(360deg);
+  }
+}
+
+@keyframes twinkle-slow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.9) rotate(0deg);
+  }
+  20% {
+    opacity: 0.8;
+    transform: scale(1.1) rotate(60deg);
+  }
+  40% {
+    opacity: 0.6;
+    transform: scale(1) rotate(120deg);
+  }
+  60% {
+    opacity: 0.9;
+    transform: scale(1.2) rotate(180deg);
+  }
+  80% {
+    opacity: 0.7;
+    transform: scale(0.8) rotate(300deg);
+  }
+}
+
+/* New dynamic movement animations */
+@keyframes float-and-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0px) scale(0.8) rotate(0deg);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-15px) scale(1.2) rotate(90deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-8px) scale(1) rotate(180deg);
+  }
+  75% {
+    opacity: 0.9;
+    transform: translateY(-20px) scale(1.1) rotate(270deg);
+  }
+}
+
+@keyframes drift-and-spin {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translateX(0px) scale(0.7) rotate(0deg);
+  }
+  30% {
+    opacity: 0.9;
+    transform: translateX(12px) scale(1.3) rotate(120deg);
+  }
+  60% {
+    opacity: 0.5;
+    transform: translateX(-8px) scale(0.9) rotate(240deg);
+  }
+  90% {
+    opacity: 0.8;
+    transform: translateX(15px) scale(1.1) rotate(360deg);
+  }
+}
+
+@keyframes bounce-and-twinkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0px) scale(0.9) rotate(0deg);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateY(-12px) scale(1.1) rotate(60deg);
+  }
+  40% {
+    opacity: 0.6;
+    transform: translateY(-6px) scale(1) rotate(120deg);
+  }
+  60% {
+    opacity: 0.9;
+    transform: translateY(-18px) scale(1.2) rotate(180deg);
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateY(-3px) scale(0.8) rotate(300deg);
+  }
+}
+
+/* Neon wispy cloud animations */
+@keyframes cloud-drift-slow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translateX(-100px) scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.4;
+    transform: translateX(-30px) scale(1.3) rotate(15deg);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateX(20px) scale(1.2) rotate(-10deg);
+  }
+  75% {
+    opacity: 0.5;
+    transform: translateX(80px) scale(1.4) rotate(20deg);
+  }
+}
+
+@keyframes cloud-float-gentle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: translateY(0px) scale(0.9) rotate(0deg);
+  }
+  33% {
+    opacity: 0.45;
+    transform: translateY(-35px) scale(1.3) rotate(8deg);
+  }
+  66% {
+    opacity: 0.35;
+    transform: translateY(-15px) scale(1.1) rotate(-5deg);
+  }
+}
+
+@keyframes cloud-pulse-soft {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.4) rotate(180deg);
+  }
+}
+
+@keyframes cloud-spin-slow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    opacity: 0.5;
+    transform: rotate(90deg) scale(1.3);
+  }
+  50% {
+    opacity: 0.4;
+    transform: rotate(180deg) scale(0.8);
+  }
+  75% {
+    opacity: 0.6;
+    transform: rotate(270deg) scale(1.4);
+  }
+}
+
+/* New more dynamic cloud animations */
+@keyframes cloud-bounce-wild {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.6;
+    transform: translateY(-40px) translateX(20px) scale(1.4) rotate(25deg);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateY(-20px) translateX(-15px) scale(1.1) rotate(-15deg);
+  }
+  75% {
+    opacity: 0.7;
+    transform: translateY(-50px) translateX(30px) scale(1.5) rotate(35deg);
+  }
+}
+
+@keyframes cloud-drift-fast {
+  0%, 100% {
+    opacity: 0.25;
+    transform: translateX(-120px) scale(0.9) rotate(0deg);
+  }
+  20% {
+    opacity: 0.5;
+    transform: translateX(-60px) scale(1.2) rotate(10deg);
+  }
+  40% {
+    opacity: 0.35;
+    transform: translateX(0px) scale(1.1) rotate(-5deg);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateX(60px) scale(1.3) rotate(15deg);
+  }
+  80% {
+    opacity: 0.4;
+    transform: translateX(100px) scale(1.2) rotate(-10deg);
+  }
+}
+
+@keyframes cloud-spin-rapid {
+  0%, 100% {
+    opacity: 0.3;
+    transform: rotate(0deg) scale(1) translateY(0px);
+  }
+  33% {
+    opacity: 0.6;
+    transform: rotate(120deg) scale(1.3) translateY(-25px);
+  }
+  66% {
+    opacity: 0.4;
+    transform: rotate(240deg) scale(0.9) translateY(-10px);
+  }
+}
+
+/* Neon glow animations */
+@keyframes neonFlicker {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(236, 72, 153, 1),
+      0 0 20px rgba(236, 72, 153, 0.8),
+      0 0 30px rgba(236, 72, 153, 0.6),
+      0 0 40px rgba(168, 85, 247, 0.8),
+      0 0 60px rgba(168, 85, 247, 0.6),
+      0 0 80px rgba(59, 130, 246, 0.5),
+      0 0 100px rgba(59, 130, 246, 0.3);
+  }
+  25% {
+    text-shadow: 
+      0 0 5px rgba(236, 72, 153, 1),
+      0 0 15px rgba(236, 72, 153, 0.9),
+      0 0 25px rgba(236, 72, 153, 0.7),
+      0 0 35px rgba(168, 85, 247, 0.9),
+      0 0 55px rgba(168, 85, 247, 0.7),
+      0 0 75px rgba(59, 130, 246, 0.6),
+      0 0 95px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    text-shadow: 
+      0 0 15px rgba(236, 72, 153, 1),
+      0 0 30px rgba(236, 72, 153, 0.9),
+      0 0 50px rgba(236, 72, 153, 0.7),
+      0 0 70px rgba(168, 85, 247, 0.9),
+      0 0 90px rgba(168, 85, 247, 0.7),
+      0 0 110px rgba(59, 130, 246, 0.6),
+      0 0 130px rgba(59, 130, 246, 0.4);
+  }
+  75% {
+    text-shadow: 
+      0 0 8px rgba(236, 72, 153, 1),
+      0 0 18px rgba(236, 72, 153, 0.9),
+      0 0 28px rgba(236, 72, 153, 0.7),
+      0 0 38px rgba(168, 85, 247, 0.9),
+      0 0 58px rgba(168, 85, 247, 0.7),
+      0 0 78px rgba(59, 130, 246, 0.6),
+      0 0 98px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(236, 72, 153, 1),
+      0 0 20px rgba(236, 72, 153, 0.8),
+      0 0 30px rgba(168, 85, 247, 0.7),
+      0 0 40px rgba(59, 130, 246, 0.6);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(236, 72, 153, 1),
+      0 0 40px rgba(236, 72, 153, 0.9),
+      0 0 60px rgba(168, 85, 247, 0.8),
+      0 0 80px rgba(59, 130, 246, 0.7);
   }
 }
 
@@ -58,6 +366,66 @@
 
 .animate-float-slow {
   animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.animate-twinkle-delayed {
+  animation: twinkle-delayed 6s ease-in-out infinite;
+}
+
+.animate-twinkle-slow {
+  animation: twinkle-slow 8s ease-in-out infinite;
+}
+
+.animate-float-and-twinkle {
+  animation: float-and-twinkle 5s ease-in-out infinite;
+}
+
+.animate-drift-and-spin {
+  animation: drift-and-spin 7s ease-in-out infinite;
+}
+
+.animate-bounce-and-twinkle {
+  animation: bounce-and-twinkle 6s ease-in-out infinite;
+}
+
+.animate-cloud-drift-slow {
+  animation: cloud-drift-slow 20s ease-in-out infinite;
+}
+
+.animate-cloud-float-gentle {
+  animation: cloud-float-gentle 15s ease-in-out infinite;
+}
+
+.animate-cloud-pulse-soft {
+  animation: cloud-pulse-soft 12s ease-in-out infinite;
+}
+
+.animate-cloud-spin-slow {
+  animation: cloud-spin-slow 18s ease-in-out infinite;
+}
+
+.animate-cloud-bounce-wild {
+  animation: cloud-bounce-wild 10s ease-in-out infinite;
+}
+
+.animate-cloud-drift-fast {
+  animation: cloud-drift-fast 15s ease-in-out infinite;
+}
+
+.animate-cloud-spin-rapid {
+  animation: cloud-spin-rapid 12s ease-in-out infinite;
+}
+
+.neon-glow {
+  animation: neonFlicker 3s ease-in-out infinite alternate;
+}
+
+.neon-pulse {
+  animation: neonPulse 2s ease-in-out infinite;
 }
 
 /* Custom scrollbar */
@@ -85,9 +453,7 @@ html {
 
 /* Base styles */
 body {
-  font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, #fdf2f8 0%, #eff6ff 50%, #faf5ff 100%);
-  min-height: 100vh;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -106,25 +472,111 @@ button:focus-visible {
   color: #4c1d95;
 }
 
-/* Custom button hover effects */
-.btn-whimsy {
-  position: relative;
-  overflow: hidden;
+/* Responsive layout */
+@media (max-width: 1200px) {
+  .desktop-horizontal {
+    flex-direction: column !important;
+    gap: 40px !important;
+    text-align: center;
+  }
+  
+  .desktop-horizontal > div:first-child {
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 600px !important;
+  }
+  
+  .desktop-horizontal > div:last-child {
+    max-width: 700px !important;
+  }
 }
 
-.btn-whimsy::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
+@media (max-width: 768px) {
+  h1 { 
+    font-size: 3.5rem !important; 
+  }
+  
+  .desktop-horizontal > div:first-child > div:last-child {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  
+  .desktop-horizontal > div:first-child > div:last-child > a {
+    width: 200px !important;
+    justify-content: center !important;
+    padding: 12px 20px !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
 }
 
-.btn-whimsy:hover::before {
-  left: 100%;
+/* Tablet-specific button layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .button-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    max-width: 400px !important;
+    width: 100% !important;
+  }
+  
+  .button-container a {
+    width: 100% !important;
+    max-width: none !important;
+    justify-content: center !important;
+    padding: 12px 16px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { 
+    font-size: 3rem !important; 
+    width: 100% !important;
+    margin: 0 0 8px 0 !important;
+  }
+  
+  .desktop-horizontal > div:first-child {
+    align-items: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  
+  /* Reduce main container padding for more horizontal space */
+  .main-container {
+    padding: 60px 16px !important;
+  }
+  
+  /* Allow text boxes to use more width */
+  .text-content-container {
+    max-width: none !important;
+    width: 100% !important;
+  }
+  
+  /* Ensure button container fits within screen */
+  .button-container {
+    max-width: calc(100vw - 40px) !important;
+    padding: 0 5px !important;
+  }
+  
+  .button-container a {
+    max-width: 180px !important;
+    padding: 10px 15px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Ensure profile picture always fits within screen boundaries */
+  .profile-container {
+    padding: 0 15px !important;
+  }
+  
+  .profile-container > div {
+    width: min(200px, calc(100vw - 60px)) !important;
+    height: min(200px, calc(100vw - 60px)) !important;
+  }
 }
 
 /* Responsive typography */
@@ -134,9 +586,19 @@ button:focus-visible {
   }
 }
 
-/* Dark mode support (optional) */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(135deg, #1e1b2e 0%, #2d1b3d 50%, #1a1a2e 100%);
-  }
+/* Shape classes */
+.star-shape {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.cross-shape {
+  clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
+}
+
+.diamond-shape {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.circle-shape {
+  border-radius: 50%;
 }

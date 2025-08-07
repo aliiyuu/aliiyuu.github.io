@@ -1,9 +1,24 @@
 'use client';
-import { Mail, FileText, Github, Linkedin, Moon, Sun } from 'lucide-react';
+
 import { useState } from 'react';
+import { Mail, FileText, Github, Linkedin, Moon, Sun, LucideIcon } from 'lucide-react';
+
+interface SocialLink {
+  icon: LucideIcon;
+  label: string;
+  href: string;
+}
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const socialLinks: SocialLink[] = [
+    { icon: Mail, label: 'Email', href: 'mailto:aliciayu@g.ucla.edu' },
+    { icon: FileText, label: 'Resume', href: 'https://drive.google.com/file/d/16_ss3T7sBmps-AdjIaRuo5mATmtl36z8/view?usp=sharing' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/alliciayu' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/aliiyuu' }
+  ];
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -12,9 +27,10 @@ export default function Home() {
         : 'linear-gradient(135deg, #faf0e6 0%, #e8d5ff 20%, #d6e8ff 40%, #f8d7da 60%, #ddd6fe 80%, #fce7f3 100%)',
       position: 'relative',
       overflow: 'hidden',
-      fontFamily: 'Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+      fontFamily: 'Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      transition: 'all 0.5s ease'
     }}>
-      {/* Dark mode toggle button */}
+      {/* Dark mode toggle */}
       <button
         onClick={() => setIsDarkMode(!isDarkMode)}
         style={{
@@ -25,9 +41,9 @@ export default function Home() {
           height: '50px',
           borderRadius: '50%',
           border: 'none',
-          backgroundColor: isDarkMode 
-            ? 'rgba(253, 242, 248, 0.9)' 
-            : 'rgba(124, 111, 190, 0.9)',
+          background: isDarkMode
+            ? 'linear-gradient(135deg, #f9a8d4 0%, #a78bfa 100%)'
+            : 'linear-gradient(135deg, #a78bfa 0%, #e9d5ff 100%)',
           color: isDarkMode ? '#4c1d95' : '#ffffff',
           display: 'flex',
           alignItems: 'center',
@@ -53,13 +69,14 @@ export default function Home() {
             ? '0 4px 20px rgba(236, 72, 153, 0.3)' 
             : '0 4px 20px rgba(139, 92, 246, 0.3)';
         }}
+        aria-label="Toggle dark mode"
       >
         {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
       </button>
 
-      {/* Subtle floating elements */}
+      {/* Floating background elements */}
       <div style={{
-        position: 'absolute',
+        position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
@@ -67,646 +84,530 @@ export default function Home() {
         overflow: 'hidden',
         pointerEvents: 'none'
       }}>
+        {/* Floating background orbs */}
         <div style={{
           position: 'absolute',
           top: '10%',
-          left: '15%',
+          left: '10%',
           width: '120px',
           height: '120px',
           background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, rgba(139, 92, 246, 0.1) 70%)'
-            : 'radial-gradient(circle, rgba(196, 181, 253, 0.3) 0%, rgba(196, 181, 253, 0.1) 70%)',
+            ? 'radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, rgba(147, 51, 234, 0.05) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(147, 51, 234, 0.08) 0%, rgba(147, 51, 234, 0.04) 50%, transparent 100%)',
           borderRadius: '50%',
-          filter: 'blur(30px)',
-          animation: 'float 8s ease-in-out infinite'
-        }}></div>
-        <div style={{
-          position: 'absolute',
-          top: '30%',
-          right: '20%',
-          width: '80px',
-          height: '80px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(219, 39, 119, 0.25) 0%, rgba(236, 72, 153, 0.08) 70%)'
-            : 'radial-gradient(circle, rgba(244, 114, 182, 0.25) 0%, rgba(244, 114, 182, 0.08) 70%)',
-          borderRadius: '50%',
-          filter: 'blur(25px)',
-          animation: 'float 10s ease-in-out infinite',
-          animationDelay: '3s'
-        }}></div>
-        <div style={{
-          position: 'absolute',
-          bottom: '20%',
-          left: '10%',
-          width: '100px',
-          height: '100px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, rgba(147, 51, 234, 0.06) 70%)'
-            : 'radial-gradient(circle, rgba(167, 139, 250, 0.2) 0%, rgba(167, 139, 250, 0.05) 70%)',
-          borderRadius: '50%',
-          filter: 'blur(35px)',
-          animation: 'float 12s ease-in-out infinite',
-          animationDelay: '6s'
-        }}></div>
-        
-        {/* Floating pastel clouds */}
-        <div style={{
-          position: 'absolute',
-          top: '15%',
-          left: '5%',
-          width: '200px',
-          height: '120px',
-          background: isDarkMode 
-            ? 'radial-gradient(ellipse, rgba(236, 72, 153, 0.7) 0%, rgba(236, 72, 153, 0.4) 30%, rgba(236, 72, 153, 0.1) 60%, transparent 80%)'
-            : 'radial-gradient(ellipse, rgba(248, 180, 217, 0.9) 0%, rgba(248, 180, 217, 0.6) 30%, rgba(248, 180, 217, 0.2) 60%, transparent 80%)',
-          borderRadius: '80px',
-          filter: 'blur(35px)',
-          animation: 'cloudFloat1 20s ease-in-out infinite',
-          boxShadow: isDarkMode 
-            ? '0 0 80px rgba(236, 72, 153, 0.8), 0 0 160px rgba(236, 72, 153, 0.6), 0 0 240px rgba(236, 72, 153, 0.3)'
-            : '0 0 60px rgba(248, 180, 217, 0.9), 0 0 120px rgba(248, 180, 217, 0.7), 0 0 180px rgba(248, 180, 217, 0.4)'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '40%',
-          right: '8%',
-          width: '250px',
-          height: '140px',
-          background: isDarkMode 
-            ? 'radial-gradient(ellipse, rgba(168, 85, 247, 0.8) 0%, rgba(168, 85, 247, 0.5) 30%, rgba(168, 85, 247, 0.15) 60%, transparent 80%)'
-            : 'radial-gradient(ellipse, rgba(196, 181, 253, 1.0) 0%, rgba(196, 181, 253, 0.7) 30%, rgba(196, 181, 253, 0.25) 60%, transparent 80%)',
-          borderRadius: '90px',
-          filter: 'blur(40px)',
-          animation: 'cloudFloat2 25s ease-in-out infinite',
-          animationDelay: '5s',
-          boxShadow: isDarkMode 
-            ? '0 0 100px rgba(168, 85, 247, 0.9), 0 0 180px rgba(168, 85, 247, 0.7), 0 0 260px rgba(168, 85, 247, 0.4)'
-            : '0 0 70px rgba(196, 181, 253, 1.0), 0 0 140px rgba(196, 181, 253, 0.8), 0 0 210px rgba(196, 181, 253, 0.5)'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          bottom: '25%',
-          left: '12%',
-          width: '180px',
-          height: '110px',
-          background: isDarkMode 
-            ? 'radial-gradient(ellipse, rgba(147, 197, 253, 0.8) 0%, rgba(147, 197, 253, 0.5) 30%, rgba(147, 197, 253, 0.2) 60%, transparent 80%)'
-            : 'radial-gradient(ellipse, rgba(191, 219, 254, 1.1) 0%, rgba(191, 219, 254, 0.8) 30%, rgba(191, 219, 254, 0.3) 60%, transparent 80%)',
-          borderRadius: '70px',
-          filter: 'blur(32px)',
-          animation: 'cloudFloat3 18s ease-in-out infinite',
-          animationDelay: '10s',
-          boxShadow: isDarkMode 
-            ? '0 0 90px rgba(147, 197, 253, 1.0), 0 0 170px rgba(147, 197, 253, 0.8), 0 0 250px rgba(147, 197, 253, 0.5)'
-            : '0 0 65px rgba(191, 219, 254, 1.1), 0 0 130px rgba(191, 219, 254, 0.9), 0 0 195px rgba(191, 219, 254, 0.6)'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '65%',
-          right: '25%',
-          width: '220px',
-          height: '130px',
-          background: isDarkMode 
-            ? 'radial-gradient(ellipse, rgba(244, 114, 182, 0.7) 0%, rgba(244, 114, 182, 0.4) 30%, rgba(244, 114, 182, 0.1) 60%, transparent 80%)'
-            : 'radial-gradient(ellipse, rgba(251, 207, 232, 1.05) 0%, rgba(251, 207, 232, 0.7) 30%, rgba(251, 207, 232, 0.25) 60%, transparent 80%)',
-          borderRadius: '85px',
-          filter: 'blur(38px)',
-          animation: 'cloudFloat4 22s ease-in-out infinite',
-          animationDelay: '3s',
-          boxShadow: isDarkMode 
-            ? '0 0 95px rgba(244, 114, 182, 0.8), 0 0 175px rgba(244, 114, 182, 0.6), 0 0 255px rgba(244, 114, 182, 0.3)'
-            : '0 0 68px rgba(251, 207, 232, 1.0), 0 0 135px rgba(251, 207, 232, 0.8), 0 0 200px rgba(251, 207, 232, 0.5)'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '8%',
-          right: '20%',
-          width: '160px',
-          height: '90px',
-          background: isDarkMode 
-            ? 'radial-gradient(ellipse, rgba(124, 58, 237, 0.8) 0%, rgba(124, 58, 237, 0.5) 30%, rgba(124, 58, 237, 0.15) 60%, transparent 80%)'
-            : 'radial-gradient(ellipse, rgba(221, 214, 254, 0.95) 0%, rgba(221, 214, 254, 0.65) 30%, rgba(221, 214, 254, 0.2) 60%, transparent 80%)',
-          borderRadius: '65px',
-          filter: 'blur(30px)',
-          animation: 'cloudFloat5 16s ease-in-out infinite',
-          animationDelay: '8s',
-          boxShadow: isDarkMode 
-            ? '0 0 85px rgba(124, 58, 237, 0.9), 0 0 155px rgba(124, 58, 237, 0.7), 0 0 225px rgba(124, 58, 237, 0.4)'
-            : '0 0 55px rgba(221, 214, 254, 0.9), 0 0 110px rgba(221, 214, 254, 0.7), 0 0 165px rgba(221, 214, 254, 0.5)'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          bottom: '10%',
-          right: '5%',
-          width: '210px',
-          height: '125px',
-          background: isDarkMode 
-            ? 'radial-gradient(ellipse, rgba(139, 92, 246, 0.8) 0%, rgba(139, 92, 246, 0.5) 30%, rgba(139, 92, 246, 0.12) 60%, transparent 80%)'
-            : 'radial-gradient(ellipse, rgba(233, 213, 255, 1.0) 0%, rgba(233, 213, 255, 0.7) 30%, rgba(233, 213, 255, 0.25) 60%, transparent 80%)',
-          borderRadius: '80px',
-          filter: 'blur(36px)',
-          animation: 'cloudFloat6 24s ease-in-out infinite',
-          animationDelay: '12s',
-          boxShadow: isDarkMode 
-            ? '0 0 98px rgba(139, 92, 246, 0.9), 0 0 185px rgba(139, 92, 246, 0.7), 0 0 270px rgba(139, 92, 246, 0.4)'
-            : '0 0 70px rgba(233, 213, 255, 1.0), 0 0 140px rgba(233, 213, 255, 0.8), 0 0 210px rgba(233, 213, 255, 0.5)'
-        }}></div>
-
-        {/* Additional night sky elements for dark mode */}
-        {isDarkMode && (
-          <>
-            <div style={{
-              position: 'absolute',
-              top: '60%',
-              right: '10%',
-              width: '60px',
-              height: '60px',
-              background: 'radial-gradient(circle, rgba(147, 51, 234, 0.4) 0%, rgba(147, 51, 234, 0.1) 70%)',
-              borderRadius: '50%',
-              filter: 'blur(20px)',
-              animation: 'float 9s ease-in-out infinite',
-              animationDelay: '1s'
-            }}></div>
-            <div style={{
-              position: 'absolute',
-              top: '80%',
-              left: '60%',
-              width: '40px',
-              height: '40px',
-              background: 'radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, rgba(236, 72, 153, 0.15) 70%)',
-              borderRadius: '50%',
-              filter: 'blur(15px)',
-              animation: 'float 7s ease-in-out infinite',
-              animationDelay: '4s'
-            }}></div>
-            <div style={{
-              position: 'absolute',
-              top: '5%',
-              right: '40%',
-              width: '30px',
-              height: '30px',
-              background: 'radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, rgba(168, 85, 247, 0.2) 70%)',
-              borderRadius: '50%',
-              filter: 'blur(12px)',
-              animation: 'float 11s ease-in-out infinite',
-              animationDelay: '2s'
-            }}></div>
-          </>
-        )}
-        
-        {/* Animated glowing stars */}
-        <div style={{
-          position: 'absolute',
-          top: '15%',
-          left: '25%',
-          width: '20px',
-          height: '20px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(168, 85, 247, 0.5) 100%)'
-            : 'radial-gradient(circle, rgba(139, 92, 246, 0.7) 0%, rgba(196, 181, 253, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(168, 85, 247, 0.5)'
-            : '0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(196, 181, 253, 0.4)',
-          animation: 'star1 15s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '45%',
-          right: '30%',
-          width: '16px',
-          height: '16px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(236, 72, 153, 0.5) 100%)'
-            : 'radial-gradient(circle, rgba(244, 114, 182, 0.6) 0%, rgba(251, 207, 232, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 35px rgba(255, 255, 255, 0.7), 0 0 70px rgba(236, 72, 153, 0.5)'
-            : '0 0 25px rgba(244, 114, 182, 0.6), 0 0 50px rgba(251, 207, 232, 0.4)',
-          animation: 'star2 18s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          bottom: '30%',
-          left: '70%',
-          width: '14px',
-          height: '14px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(124, 58, 237, 0.6) 100%)'
-            : 'radial-gradient(circle, rgba(167, 139, 250, 0.7) 0%, rgba(221, 214, 254, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(124, 58, 237, 0.6)'
-            : '0 0 20px rgba(167, 139, 250, 0.6), 0 0 40px rgba(221, 214, 254, 0.4)',
-          animation: 'star3 12s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '70%',
-          left: '15%',
-          width: '18px',
-          height: '18px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(147, 51, 234, 0.5) 100%)'
-            : 'radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, rgba(233, 213, 255, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 45px rgba(255, 255, 255, 0.8), 0 0 90px rgba(147, 51, 234, 0.5)'
-            : '0 0 35px rgba(139, 92, 246, 0.5), 0 0 70px rgba(233, 213, 255, 0.4)',
-          animation: 'star4 20s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '25%',
-          right: '15%',
-          width: '12px',
-          height: '12px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(219, 39, 119, 0.5) 100%)'
-            : 'radial-gradient(circle, rgba(236, 72, 153, 0.6) 0%, rgba(252, 231, 243, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 25px rgba(255, 255, 255, 0.7), 0 0 50px rgba(219, 39, 119, 0.5)'
-            : '0 0 18px rgba(236, 72, 153, 0.5), 0 0 36px rgba(252, 231, 243, 0.4)',
-          animation: 'star5 14s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          bottom: '15%',
-          right: '25%',
-          width: '22px',
-          height: '22px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(168, 85, 247, 0.6) 100%)'
-            : 'radial-gradient(circle, rgba(124, 58, 237, 0.7) 0%, rgba(196, 181, 253, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 50px rgba(255, 255, 255, 0.9), 0 0 100px rgba(168, 85, 247, 0.6)'
-            : '0 0 40px rgba(124, 58, 237, 0.6), 0 0 80px rgba(196, 181, 253, 0.4)',
-          animation: 'star6 16s ease-in-out infinite'
-        }}></div>
-        
-        {/* Additional twinkling stars */}
-        <div style={{
-          position: 'absolute',
-          top: '35%',
-          left: '5%',
-          width: '15px',
-          height: '15px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(147, 197, 253, 0.6) 100%)'
-            : 'radial-gradient(circle, rgba(147, 197, 253, 0.7) 0%, rgba(191, 219, 254, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 35px rgba(255, 255, 255, 0.8), 0 0 70px rgba(147, 197, 253, 0.6)'
-            : '0 0 25px rgba(147, 197, 253, 0.6), 0 0 50px rgba(191, 219, 254, 0.4)',
-          animation: 'star7 13s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '55%',
-          left: '85%',
-          width: '19px',
-          height: '19px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(244, 114, 182, 0.6) 100%)'
-            : 'radial-gradient(circle, rgba(236, 72, 153, 0.7) 0%, rgba(252, 231, 243, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 45px rgba(255, 255, 255, 0.9), 0 0 90px rgba(244, 114, 182, 0.6)'
-            : '0 0 30px rgba(236, 72, 153, 0.6), 0 0 60px rgba(252, 231, 243, 0.4)',
-          animation: 'star8 19s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          bottom: '45%',
-          left: '3%',
-          width: '13px',
-          height: '13px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(139, 92, 246, 0.5) 100%)'
-            : 'radial-gradient(circle, rgba(124, 58, 237, 0.6) 0%, rgba(233, 213, 255, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(139, 92, 246, 0.5)'
-            : '0 0 20px rgba(124, 58, 237, 0.5), 0 0 40px rgba(233, 213, 255, 0.4)',
-          animation: 'star9 11s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '80%',
-          right: '45%',
-          width: '17px',
-          height: '17px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(219, 39, 119, 0.5) 100%)'
-            : 'radial-gradient(circle, rgba(244, 114, 182, 0.6) 0%, rgba(251, 207, 232, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(219, 39, 119, 0.5)'
-            : '0 0 28px rgba(244, 114, 182, 0.5), 0 0 56px rgba(251, 207, 232, 0.4)',
-          animation: 'star10 17s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '10%',
-          left: '60%',
-          width: '21px',
-          height: '21px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(147, 51, 234, 0.6) 100%)'
-            : 'radial-gradient(circle, rgba(139, 92, 246, 0.7) 0%, rgba(196, 181, 253, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 55px rgba(255, 255, 255, 0.9), 0 0 110px rgba(147, 51, 234, 0.6)'
-            : '0 0 38px rgba(139, 92, 246, 0.6), 0 0 76px rgba(196, 181, 253, 0.4)',
-          animation: 'star11 21s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          bottom: '70%',
-          right: '8%',
-          width: '11px',
-          height: '11px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(168, 85, 247, 0.5) 100%)'
-            : 'radial-gradient(circle, rgba(167, 139, 250, 0.6) 0%, rgba(221, 214, 254, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 25px rgba(255, 255, 255, 0.6), 0 0 50px rgba(168, 85, 247, 0.5)'
-            : '0 0 18px rgba(167, 139, 250, 0.5), 0 0 36px rgba(221, 214, 254, 0.4)',
-          animation: 'star12 9s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '90%',
-          left: '25%',
-          width: '24px',
-          height: '24px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(236, 72, 153, 0.7) 100%)'
-            : 'radial-gradient(circle, rgba(219, 39, 119, 0.7) 0%, rgba(248, 180, 217, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 60px rgba(255, 255, 255, 1), 0 0 120px rgba(236, 72, 153, 0.7)'
-            : '0 0 42px rgba(219, 39, 119, 0.6), 0 0 84px rgba(248, 180, 217, 0.4)',
-          animation: 'star13 23s ease-in-out infinite'
-        }}></div>
-        
-        {/* Mystical will o' the wisps */}
-        <div style={{
-          position: 'absolute',
-          top: '20%',
-          left: '10%',
-          width: '8px',
-          height: '8px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(173, 216, 230, 1) 0%, rgba(135, 206, 235, 0.8) 50%, transparent 100%)'
-            : 'radial-gradient(circle, rgba(135, 206, 235, 0.9) 0%, rgba(173, 216, 230, 0.6) 50%, transparent 100%)',
-          borderRadius: '50%',
-          boxShadow: isDarkMode 
-            ? '0 0 20px rgba(173, 216, 230, 0.9), 0 0 40px rgba(135, 206, 235, 0.7), 0 0 60px rgba(173, 216, 230, 0.4)'
-            : '0 0 15px rgba(135, 206, 235, 0.8), 0 0 30px rgba(173, 216, 230, 0.6), 0 0 45px rgba(173, 216, 230, 0.3)',
-          filter: 'blur(1px)',
-          animation: 'wisp1 12s ease-in-out infinite'
-        }}></div>
-        
+          filter: 'blur(20px)',
+          animation: 'float 6s ease-in-out infinite'
+        }} />
         <div style={{
           position: 'absolute',
           top: '60%',
           right: '15%',
-          width: '6px',
-          height: '6px',
+          width: '80px',
+          height: '80px',
           background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 182, 193, 1) 0%, rgba(255, 192, 203, 0.8) 50%, transparent 100%)'
-            : 'radial-gradient(circle, rgba(255, 182, 193, 0.8) 0%, rgba(255, 192, 203, 0.5) 50%, transparent 100%)',
+            ? 'radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, rgba(236, 72, 153, 0.06) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, rgba(236, 72, 153, 0.05) 50%, transparent 100%)',
           borderRadius: '50%',
-          boxShadow: isDarkMode 
-            ? '0 0 18px rgba(255, 182, 193, 0.9), 0 0 35px rgba(255, 192, 203, 0.7), 0 0 50px rgba(255, 192, 203, 0.4)'
-            : '0 0 12px rgba(255, 182, 193, 0.7), 0 0 25px rgba(255, 192, 203, 0.5), 0 0 38px rgba(255, 192, 203, 0.2)',
-          filter: 'blur(0.8px)',
-          animation: 'wisp2 15s ease-in-out infinite'
-        }}></div>
-        
+          filter: 'blur(15px)',
+          animation: 'float-delayed 8s ease-in-out infinite'
+        }} />
         <div style={{
           position: 'absolute',
-          bottom: '30%',
-          left: '25%',
-          width: '10px',
-          height: '10px',
+          bottom: '20%',
+          left: '20%',
+          width: '100px',
+          height: '100px',
           background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(221, 160, 221, 1) 0%, rgba(186, 85, 211, 0.8) 50%, transparent 100%)'
-            : 'radial-gradient(circle, rgba(186, 85, 211, 0.8) 0%, rgba(221, 160, 221, 0.6) 50%, transparent 100%)',
+            ? 'radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.04) 50%, transparent 100%)',
           borderRadius: '50%',
-          boxShadow: isDarkMode 
-            ? '0 0 25px rgba(221, 160, 221, 0.9), 0 0 50px rgba(186, 85, 211, 0.7), 0 0 75px rgba(221, 160, 221, 0.4)'
-            : '0 0 18px rgba(186, 85, 211, 0.7), 0 0 35px rgba(221, 160, 221, 0.5), 0 0 52px rgba(221, 160, 221, 0.3)',
-          filter: 'blur(1.2px)',
-          animation: 'wisp3 18s ease-in-out infinite'
-        }}></div>
-        
+          filter: 'blur(18px)',
+          animation: 'float-slow 10s ease-in-out infinite'
+        }} />
         <div style={{
           position: 'absolute',
-          top: '35%',
-          left: '70%',
-          width: '7px',
-          height: '7px',
+          top: '30%',
+          right: '5%',
+          width: '90px',
+          height: '90px',
           background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(196, 181, 253, 1) 0%, rgba(147, 112, 219, 0.8) 50%, transparent 100%)'
-            : 'radial-gradient(circle, rgba(152, 251, 152, 0.7) 0%, rgba(144, 238, 144, 0.5) 50%, transparent 100%)',
+            ? 'radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0.05) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, rgba(168, 85, 247, 0.04) 50%, transparent 100%)',
           borderRadius: '50%',
-          boxShadow: isDarkMode 
-            ? '0 0 22px rgba(196, 181, 253, 0.9), 0 0 44px rgba(147, 112, 219, 0.7), 0 0 66px rgba(147, 112, 219, 0.4)'
-            : '0 0 14px rgba(152, 251, 152, 0.6), 0 0 28px rgba(144, 238, 144, 0.4), 0 0 42px rgba(144, 238, 144, 0.2)',
-          filter: 'blur(0.9px)',
-          animation: 'wisp4 14s ease-in-out infinite'
-        }}></div>
-        
+          filter: 'blur(16px)',
+          animation: 'float 7s ease-in-out infinite',
+          animationDelay: '2s'
+        }} />
         <div style={{
+          position: 'absolute',
+          bottom: '40%',
+          right: '30%',
+          width: '70px',
+          height: '70px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, rgba(14, 165, 233, 0.04) 50%, transparent 100%)',
+          borderRadius: '50%',
+          filter: 'blur(14px)',
+          animation: 'float-delayed 9s ease-in-out infinite',
+          animationDelay: '1s'
+        }} />
+        <div style={{
+          position: 'absolute',
+          top: '80%',
+          left: '5%',
+          width: '110px',
+          height: '110px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(139, 92, 246, 0.04) 50%, transparent 100%)',
+          borderRadius: '50%',
+          filter: 'blur(19px)',
+          animation: 'float-slow 11s ease-in-out infinite',
+          animationDelay: '3s'
+        }} />
+        <div style={{
+          position: 'absolute',
+          top: '15%',
+          left: '60%',
+          width: '85px',
+          height: '85px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, rgba(6, 182, 212, 0.04) 50%, transparent 100%)',
+          borderRadius: '50%',
+          filter: 'blur(17px)',
+          animation: 'float 8s ease-in-out infinite',
+          animationDelay: '4s'
+        }} />
+
+        {/* Neon wispy clouds in cool tones */}
+        <div className="animate-cloud-drift-fast" style={{
+          position: 'absolute',
+          top: '5%',
+          left: '-50px',
+          width: '200px',
+          height: '80px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse at center, rgba(147, 51, 234, 0.35) 0%, rgba(147, 51, 234, 0.2) 40%, rgba(147, 51, 234, 0.08) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(147, 51, 234, 0.28) 0%, rgba(147, 51, 234, 0.15) 40%, rgba(147, 51, 234, 0.06) 70%, transparent 100%)',
+          borderRadius: '50px',
+          filter: 'blur(25px)',
+          boxShadow: isDarkMode 
+            ? '0 0 40px rgba(147, 51, 234, 0.5), 0 0 80px rgba(147, 51, 234, 0.2)' 
+            : '0 0 35px rgba(147, 51, 234, 0.4), 0 0 70px rgba(147, 51, 234, 0.15)'
+        }} />
+        <div className="animate-cloud-bounce-wild" style={{
+          position: 'absolute',
+          top: '25%',
+          right: '-30px',
+          width: '150px',
+          height: '60px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse at center, rgba(14, 165, 233, 0.32) 0%, rgba(14, 165, 233, 0.18) 40%, rgba(14, 165, 233, 0.08) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(14, 165, 233, 0.25) 0%, rgba(14, 165, 233, 0.14) 40%, rgba(14, 165, 233, 0.06) 70%, transparent 100%)',
+          borderRadius: '40px',
+          filter: 'blur(20px)',
+          boxShadow: isDarkMode 
+            ? '0 0 35px rgba(14, 165, 233, 0.45), 0 0 70px rgba(14, 165, 233, 0.18)' 
+            : '0 0 30px rgba(14, 165, 233, 0.35), 0 0 60px rgba(14, 165, 233, 0.12)'
+        }} />
+        <div className="animate-cloud-spin-rapid" style={{
           position: 'absolute',
           bottom: '15%',
-          right: '30%',
-          width: '9px',
-          height: '9px',
+          left: '10%',
+          width: '180px',
+          height: '70px',
           background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 218, 185, 1) 0%, rgba(255, 192, 203, 0.8) 50%, transparent 100%)'
-            : 'radial-gradient(circle, rgba(255, 228, 196, 0.8) 0%, rgba(255, 218, 185, 0.5) 50%, transparent 100%)',
-          borderRadius: '50%',
+            ? 'radial-gradient(ellipse at center, rgba(139, 92, 246, 0.34) 0%, rgba(139, 92, 246, 0.19) 40%, rgba(139, 92, 246, 0.08) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(139, 92, 246, 0.27) 0%, rgba(139, 92, 246, 0.15) 40%, rgba(139, 92, 246, 0.06) 70%, transparent 100%)',
+          borderRadius: '45px',
+          filter: 'blur(22px)',
           boxShadow: isDarkMode 
-            ? '0 0 24px rgba(255, 218, 185, 0.9), 0 0 48px rgba(255, 192, 203, 0.7), 0 0 72px rgba(255, 192, 203, 0.4)'
-            : '0 0 16px rgba(255, 228, 196, 0.7), 0 0 32px rgba(255, 218, 185, 0.4), 0 0 48px rgba(255, 218, 185, 0.2)',
-          filter: 'blur(1px)',
-          animation: 'wisp5 20s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
+            ? '0 0 38px rgba(139, 92, 246, 0.48), 0 0 76px rgba(139, 92, 246, 0.19)' 
+            : '0 0 32px rgba(139, 92, 246, 0.38), 0 0 64px rgba(139, 92, 246, 0.15)'
+        }} />
+        <div className="animate-cloud-bounce-wild" style={{
+          position: 'absolute',
+          top: '70%',
+          right: '10%',
+          width: '120px',
+          height: '50px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse at center, rgba(6, 182, 212, 0.33) 0%, rgba(6, 182, 212, 0.18) 40%, rgba(6, 182, 212, 0.08) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(6, 182, 212, 0.26) 0%, rgba(6, 182, 212, 0.14) 40%, rgba(6, 182, 212, 0.06) 70%, transparent 100%)',
+          borderRadius: '35px',
+          filter: 'blur(18px)',
+          boxShadow: isDarkMode 
+            ? '0 0 34px rgba(6, 182, 212, 0.46), 0 0 68px rgba(6, 182, 212, 0.18)' 
+            : '0 0 29px rgba(6, 182, 212, 0.36), 0 0 58px rgba(6, 182, 212, 0.14)',
+          animationDelay: '2s'
+        }} />
+        <div className="animate-cloud-drift-fast" style={{
+          position: 'absolute',
+          top: '45%',
+          left: '-40px',
+          width: '160px',
+          height: '65px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.31) 0%, rgba(59, 130, 246, 0.17) 40%, rgba(59, 130, 246, 0.07) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.24) 0%, rgba(59, 130, 246, 0.13) 40%, rgba(59, 130, 246, 0.05) 70%, transparent 100%)',
+          borderRadius: '42px',
+          filter: 'blur(21px)',
+          boxShadow: isDarkMode 
+            ? '0 0 36px rgba(59, 130, 246, 0.44), 0 0 72px rgba(59, 130, 246, 0.17)' 
+            : '0 0 31px rgba(59, 130, 246, 0.35), 0 0 62px rgba(59, 130, 246, 0.13)',
+          animationDelay: '5s'
+        }} />
+        <div className="animate-cloud-spin-rapid" style={{
+          position: 'absolute',
+          bottom: '60%',
+          right: '-20px',
+          width: '140px',
+          height: '55px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.32) 0%, rgba(168, 85, 247, 0.18) 40%, rgba(168, 85, 247, 0.08) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.25) 0%, rgba(168, 85, 247, 0.14) 40%, rgba(168, 85, 247, 0.06) 70%, transparent 100%)',
+          borderRadius: '38px',
+          filter: 'blur(19px)',
+          boxShadow: isDarkMode 
+            ? '0 0 33px rgba(168, 85, 247, 0.42), 0 0 66px rgba(168, 85, 247, 0.16)' 
+            : '0 0 28px rgba(168, 85, 247, 0.34), 0 0 56px rgba(168, 85, 247, 0.12)',
+          animationDelay: '3s'
+        }} />
+        <div className="animate-cloud-bounce-wild" style={{
+          position: 'absolute',
+          top: '85%',
+          left: '30%',
+          width: '130px',
+          height: '55px',
+          background: isDarkMode 
+            ? 'radial-gradient(ellipse at center, rgba(147, 51, 234, 0.33) 0%, rgba(147, 51, 234, 0.19) 40%, rgba(147, 51, 234, 0.08) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(147, 51, 234, 0.26) 0%, rgba(147, 51, 234, 0.15) 40%, rgba(147, 51, 234, 0.06) 70%, transparent 100%)',
+          borderRadius: '36px',
+          filter: 'blur(20px)',
+          boxShadow: isDarkMode 
+            ? '0 0 35px rgba(147, 51, 234, 0.45), 0 0 70px rgba(147, 51, 234, 0.18)' 
+            : '0 0 30px rgba(147, 51, 234, 0.36), 0 0 60px rgba(147, 51, 234, 0.14)',
+          animationDelay: '2s'
+        }} />
+
+        {/* Vibrant pink, purple, and blue blobs */}
+        <div className="animate-float" style={{
+          position: 'absolute',
+          top: '8%',
+          left: '5%',
+          width: '140px',
+          height: '140px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(236, 72, 153, 0.6) 0%, rgba(236, 72, 153, 0.4) 50%, rgba(236, 72, 153, 0.2) 80%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, rgba(236, 72, 153, 0.3) 50%, rgba(236, 72, 153, 0.15) 80%, transparent 100%)',
+          borderRadius: '50%',
+          filter: 'blur(30px)',
+          boxShadow: isDarkMode 
+            ? '0 0 50px rgba(236, 72, 153, 0.7), 0 0 100px rgba(236, 72, 153, 0.3)' 
+            : '0 0 40px rgba(236, 72, 153, 0.6), 0 0 80px rgba(236, 72, 153, 0.25)',
+          animationDelay: '1s'
+        }} />
+        <div className="animate-float-delayed" style={{
+          position: 'absolute',
+          top: '50%',
+          right: '8%',
+          width: '120px',
+          height: '120px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(147, 51, 234, 0.65) 0%, rgba(147, 51, 234, 0.45) 50%, rgba(147, 51, 234, 0.25) 80%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(147, 51, 234, 0.55) 0%, rgba(147, 51, 234, 0.35) 50%, rgba(147, 51, 234, 0.2) 80%, transparent 100%)',
+          borderRadius: '50%',
+          filter: 'blur(28px)',
+          boxShadow: isDarkMode 
+            ? '0 0 45px rgba(147, 51, 234, 0.75), 0 0 90px rgba(147, 51, 234, 0.35)' 
+            : '0 0 35px rgba(147, 51, 234, 0.65), 0 0 70px rgba(147, 51, 234, 0.3)',
+          animationDelay: '3s'
+        }} />
+        <div className="animate-float-slow" style={{
+          position: 'absolute',
+          bottom: '15%',
+          left: '15%',
+          width: '160px',
+          height: '160px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0.35) 50%, rgba(59, 130, 246, 0.2) 80%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.25) 50%, rgba(59, 130, 246, 0.15) 80%, transparent 100%)',
+          borderRadius: '50%',
+          filter: 'blur(35px)',
+          boxShadow: isDarkMode 
+            ? '0 0 55px rgba(59, 130, 246, 0.6), 0 0 110px rgba(59, 130, 246, 0.3)' 
+            : '0 0 45px rgba(59, 130, 246, 0.5), 0 0 90px rgba(59, 130, 246, 0.25)',
+          animationDelay: '2s'
+        }} />
+        <div className="animate-float" style={{
+          position: 'absolute',
+          top: '25%',
+          left: '70%',
+          width: '100px',
+          height: '100px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, rgba(168, 85, 247, 0.4) 50%, rgba(168, 85, 247, 0.2) 80%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(168, 85, 247, 0.5) 0%, rgba(168, 85, 247, 0.3) 50%, rgba(168, 85, 247, 0.15) 80%, transparent 100%)',
+          borderRadius: '50%',
+          filter: 'blur(25px)',
+          boxShadow: isDarkMode 
+            ? '0 0 40px rgba(168, 85, 247, 0.7), 0 0 80px rgba(168, 85, 247, 0.3)' 
+            : '0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(168, 85, 247, 0.25)',
+          animationDelay: '4s'
+        }} />
+        <div className="animate-float-delayed" style={{
+          position: 'absolute',
+          bottom: '40%',
+          right: '25%',
+          width: '130px',
+          height: '130px',
+          background: isDarkMode 
+            ? 'radial-gradient(circle, rgba(236, 72, 153, 0.55) 0%, rgba(236, 72, 153, 0.35) 50%, rgba(236, 72, 153, 0.18) 80%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(236, 72, 153, 0.45) 0%, rgba(236, 72, 153, 0.25) 50%, rgba(236, 72, 153, 0.12) 80%, transparent 100%)',
+          borderRadius: '50%',
+          filter: 'blur(32px)',
+          boxShadow: isDarkMode 
+            ? '0 0 48px rgba(236, 72, 153, 0.65), 0 0 96px rgba(236, 72, 153, 0.28)' 
+            : '0 0 38px rgba(236, 72, 153, 0.55), 0 0 76px rgba(236, 72, 153, 0.22)',
+          animationDelay: '5s'
+        }} />
+        <div className="animate-float-slow" style={{
           position: 'absolute',
           top: '75%',
           left: '45%',
-          width: '5px',
-          height: '5px',
+          width: '110px',
+          height: '110px',
           background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(230, 230, 250, 1) 0%, rgba(221, 160, 221, 0.8) 50%, transparent 100%)'
-            : 'radial-gradient(circle, rgba(230, 230, 250, 0.7) 0%, rgba(230, 230, 250, 0.4) 50%, transparent 100%)',
+            ? 'radial-gradient(circle, rgba(14, 165, 233, 0.5) 0%, rgba(14, 165, 233, 0.35) 50%, rgba(14, 165, 233, 0.2) 80%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(14, 165, 233, 0.4) 0%, rgba(14, 165, 233, 0.25) 50%, rgba(14, 165, 233, 0.15) 80%, transparent 100%)',
           borderRadius: '50%',
+          filter: 'blur(27px)',
           boxShadow: isDarkMode 
-            ? '0 0 15px rgba(230, 230, 250, 0.9), 0 0 30px rgba(221, 160, 221, 0.7), 0 0 45px rgba(221, 160, 221, 0.4)'
-            : '0 0 10px rgba(230, 230, 250, 0.6), 0 0 20px rgba(230, 230, 250, 0.3), 0 0 30px rgba(230, 230, 250, 0.1)',
-          filter: 'blur(0.7px)',
-          animation: 'wisp6 16s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
+            ? '0 0 42px rgba(14, 165, 233, 0.6), 0 0 84px rgba(14, 165, 233, 0.3)' 
+            : '0 0 32px rgba(14, 165, 233, 0.5), 0 0 64px rgba(14, 165, 233, 0.25)',
+          animationDelay: '1s'
+        }} />
+        <div className="animate-float" style={{
           position: 'absolute',
-          top: '45%',
-          left: '5%',
-          width: '11px',
-          height: '11px',
+          top: '15%',
+          right: '40%',
+          width: '90px',
+          height: '90px',
           background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(175, 238, 238, 1) 0%, rgba(173, 216, 230, 0.8) 50%, transparent 100%)'
-            : 'radial-gradient(circle, rgba(175, 238, 238, 0.9) 0%, rgba(175, 238, 238, 0.6) 50%, transparent 100%)',
+            ? 'radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, rgba(139, 92, 246, 0.4) 50%, rgba(139, 92, 246, 0.2) 80%, transparent 100%)'
+            : 'radial-gradient(circle, rgba(139, 92, 246, 0.5) 0%, rgba(139, 92, 246, 0.3) 50%, rgba(139, 92, 246, 0.15) 80%, transparent 100%)',
           borderRadius: '50%',
+          filter: 'blur(22px)',
           boxShadow: isDarkMode 
-            ? '0 0 28px rgba(175, 238, 238, 0.9), 0 0 55px rgba(173, 216, 230, 0.7), 0 0 80px rgba(173, 216, 230, 0.4)'
-            : '0 0 20px rgba(175, 238, 238, 0.8), 0 0 40px rgba(175, 238, 238, 0.5), 0 0 60px rgba(175, 238, 238, 0.3)',
-          filter: 'blur(1.3px)',
-          animation: 'wisp7 22s ease-in-out infinite'
-        }}></div>
+            ? '0 0 35px rgba(139, 92, 246, 0.7), 0 0 70px rgba(139, 92, 246, 0.3)' 
+            : '0 0 25px rgba(139, 92, 246, 0.6), 0 0 50px rgba(139, 92, 246, 0.25)',
+          animationDelay: '3s'
+        }} />
 
-        {/* Additional twinkling stars */}
-        <div style={{
+        {/* Twinkling stars */}
+        <div className="star-shape animate-float-and-twinkle" style={{
           position: 'absolute',
-          top: '35%',
-          left: '8%',
-          width: '8px',
-          height: '8px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(168, 85, 247, 0.4) 100%)'
-            : 'radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, rgba(196, 181, 253, 0.3) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-          boxShadow: isDarkMode 
-            ? '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(168, 85, 247, 0.4)'
-            : '0 0 15px rgba(139, 92, 246, 0.6), 0 0 30px rgba(196, 181, 253, 0.3)',
-          animation: 'twinkle1 3s ease-in-out infinite'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          top: '55%',
-          right: '12%',
+          top: '8%',
+          left: '20%',
           width: '6px',
           height: '6px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(236, 72, 153, 0.5) 100%)'
-            : 'radial-gradient(circle, rgba(244, 114, 182, 0.7) 0%, rgba(251, 207, 232, 0.3) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          background: isDarkMode ? '#ffffff' : '#f8fafc',
           boxShadow: isDarkMode 
-            ? '0 0 18px rgba(255, 255, 255, 0.7), 0 0 35px rgba(236, 72, 153, 0.4)'
-            : '0 0 12px rgba(244, 114, 182, 0.5), 0 0 25px rgba(251, 207, 232, 0.3)',
-          animation: 'twinkle2 4s ease-in-out infinite',
-          animationDelay: '1s'
-        }}></div>
-        
-        <div style={{
+            ? '0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(255, 255, 255, 0.5)' 
+            : '0 0 8px rgba(248, 250, 252, 0.9), 0 0 16px rgba(248, 250, 252, 0.5)'
+        }} />
+        <div className="cross-shape animate-drift-and-spin" style={{
           position: 'absolute',
-          bottom: '45%',
-          left: '85%',
-          width: '10px',
-          height: '10px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(124, 58, 237, 0.6) 100%)'
-            : 'radial-gradient(circle, rgba(167, 139, 250, 0.8) 0%, rgba(221, 214, 254, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          top: '25%',
+          right: '25%',
+          width: '2px',
+          height: '2px',
+          background: isDarkMode ? '#e0e7ff' : '#e0e7ff',
           boxShadow: isDarkMode 
-            ? '0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(124, 58, 237, 0.5)'
-            : '0 0 18px rgba(167, 139, 250, 0.6), 0 0 35px rgba(221, 214, 254, 0.4)',
-          animation: 'twinkle3 2.5s ease-in-out infinite',
-          animationDelay: '0.5s'
-        }}></div>
-        
-        <div style={{
+            ? '0 0 4px rgba(224, 231, 255, 0.9), 0 0 8px rgba(224, 231, 255, 0.5)' 
+            : '0 0 4px rgba(224, 231, 255, 0.9), 0 0 8px rgba(224, 231, 255, 0.5)'
+        }} />
+        <div className="diamond-shape animate-bounce-and-twinkle" style={{
           position: 'absolute',
-          top: '85%',
-          left: '25%',
-          width: '7px',
-          height: '7px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(147, 51, 234, 0.5) 100%)'
-            : 'radial-gradient(circle, rgba(139, 92, 246, 0.7) 0%, rgba(233, 213, 255, 0.3) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          bottom: '15%',
+          left: '15%',
+          width: '8px',
+          height: '8px',
+          background: isDarkMode ? '#f0f9ff' : '#f0f9ff',
           boxShadow: isDarkMode 
-            ? '0 0 22px rgba(255, 255, 255, 0.8), 0 0 45px rgba(147, 51, 234, 0.4)'
-            : '0 0 14px rgba(139, 92, 246, 0.5), 0 0 28px rgba(233, 213, 255, 0.3)',
-          animation: 'twinkle4 3.5s ease-in-out infinite',
+            ? '0 0 12px rgba(240, 249, 255, 0.9), 0 0 24px rgba(240, 249, 255, 0.5)' 
+            : '0 0 12px rgba(240, 249, 255, 0.9), 0 0 24px rgba(240, 249, 255, 0.5)'
+        }} />
+        <div className="circle-shape animate-float-and-twinkle" style={{
+          position: 'absolute',
+          top: '45%',
+          left: '8%',
+          width: '3px',
+          height: '3px',
+          background: isDarkMode ? '#faf5ff' : '#faf5ff',
+          boxShadow: isDarkMode 
+            ? '0 0 6px rgba(250, 245, 255, 0.9), 0 0 12px rgba(250, 245, 255, 0.5)' 
+            : '0 0 6px rgba(250, 245, 255, 0.9), 0 0 12px rgba(250, 245, 255, 0.5)',
           animationDelay: '2s'
-        }}></div>
-        
-        <div style={{
+        }} />
+        <div className="star-shape animate-drift-and-spin" style={{
+          position: 'absolute',
+          bottom: '25%',
+          right: '10%',
+          width: '4px',
+          height: '4px',
+          background: isDarkMode ? '#f0f9ff' : '#f0f9ff',
+          boxShadow: isDarkMode 
+            ? '0 0 8px rgba(240, 249, 255, 0.9), 0 0 16px rgba(240, 249, 255, 0.5)' 
+            : '0 0 8px rgba(240, 249, 255, 0.9), 0 0 16px rgba(240, 249, 255, 0.5)',
+          animationDelay: '1s'
+        }} />
+        <div className="cross-shape animate-bounce-and-twinkle" style={{
+          position: 'absolute',
+          top: '65%',
+          left: '35%',
+          width: '1px',
+          height: '1px',
+          background: isDarkMode ? '#f8fafc' : '#f8fafc',
+          boxShadow: isDarkMode 
+            ? '0 0 3px rgba(248, 250, 252, 0.9), 0 0 6px rgba(248, 250, 252, 0.5)' 
+            : '0 0 3px rgba(248, 250, 252, 0.9), 0 0 6px rgba(248, 250, 252, 0.5)',
+          animationDelay: '3s'
+        }} />
+        <div className="diamond-shape animate-float-and-twinkle" style={{
           position: 'absolute',
           top: '12%',
+          right: '8%',
+          width: '7px',
+          height: '7px',
+          background: isDarkMode ? '#fefefe' : '#fefefe',
+          boxShadow: isDarkMode 
+            ? '0 0 10px rgba(254, 254, 254, 0.9), 0 0 20px rgba(254, 254, 254, 0.5)' 
+            : '0 0 10px rgba(254, 254, 254, 0.9), 0 0 20px rgba(254, 254, 254, 0.5)',
+          animationDelay: '4s'
+        }} />
+        <div className="circle-shape animate-drift-and-spin" style={{
+          position: 'absolute',
+          bottom: '8%',
           left: '45%',
+          width: '2px',
+          height: '2px',
+          background: isDarkMode ? '#f0f9ff' : '#f0f9ff',
+          boxShadow: isDarkMode 
+            ? '0 0 4px rgba(240, 249, 255, 0.9), 0 0 8px rgba(240, 249, 255, 0.5)' 
+            : '0 0 4px rgba(240, 249, 255, 0.9), 0 0 8px rgba(240, 249, 255, 0.5)',
+          animationDelay: '2s'
+        }} />
+        <div className="star-shape animate-bounce-and-twinkle" style={{
+          position: 'absolute',
+          top: '35%',
+          right: '15%',
           width: '9px',
           height: '9px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(219, 39, 119, 0.6) 100%)'
-            : 'radial-gradient(circle, rgba(236, 72, 153, 0.8) 0%, rgba(252, 231, 243, 0.4) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          background: isDarkMode ? '#ffffff' : '#ffffff',
           boxShadow: isDarkMode 
-            ? '0 0 24px rgba(255, 255, 255, 0.8), 0 0 48px rgba(219, 39, 119, 0.5)'
-            : '0 0 16px rgba(236, 72, 153, 0.6), 0 0 32px rgba(252, 231, 243, 0.4)',
-          animation: 'twinkle5 4.2s ease-in-out infinite',
-          animationDelay: '1.5s'
-        }}></div>
-        
-        <div style={{
+            ? '0 0 14px rgba(255, 255, 255, 0.9), 0 0 28px rgba(255, 255, 255, 0.5)' 
+            : '0 0 14px rgba(255, 255, 255, 0.9), 0 0 28px rgba(255, 255, 255, 0.5)',
+          animationDelay: '5s'
+        }} />
+        <div className="cross-shape animate-float-and-twinkle" style={{
           position: 'absolute',
-          bottom: '65%',
-          right: '45%',
+          bottom: '40%',
+          left: '25%',
+          width: '3px',
+          height: '3px',
+          background: isDarkMode ? '#faf5ff' : '#faf5ff',
+          boxShadow: isDarkMode 
+            ? '0 0 6px rgba(250, 245, 255, 0.9), 0 0 12px rgba(250, 245, 255, 0.5)' 
+            : '0 0 6px rgba(250, 245, 255, 0.9), 0 0 12px rgba(250, 245, 255, 0.5)',
+          animationDelay: '1s'
+        }} />
+        <div className="diamond-shape animate-drift-and-spin" style={{
+          position: 'absolute',
+          top: '80%',
+          right: '35%',
           width: '5px',
           height: '5px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(168, 85, 247, 0.4) 100%)'
-            : 'radial-gradient(circle, rgba(196, 181, 253, 0.6) 0%, rgba(233, 213, 255, 0.2) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          background: isDarkMode ? '#f0f9ff' : '#f0f9ff',
           boxShadow: isDarkMode 
-            ? '0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(168, 85, 247, 0.3)'
-            : '0 0 10px rgba(196, 181, 253, 0.4), 0 0 20px rgba(233, 213, 255, 0.2)',
-          animation: 'twinkle6 2.8s ease-in-out infinite',
-          animationDelay: '0.8s'
-        }}></div>
-        
-        <div style={{
+            ? '0 0 10px rgba(240, 249, 255, 0.9), 0 0 20px rgba(240, 249, 255, 0.5)' 
+            : '0 0 10px rgba(240, 249, 255, 0.9), 0 0 20px rgba(240, 249, 255, 0.5)',
+          animationDelay: '3s'
+        }} />
+        <div className="circle-shape animate-bounce-and-twinkle" style={{
           position: 'absolute',
-          top: '78%',
-          right: '15%',
-          width: '11px',
-          height: '11px',
-          background: isDarkMode 
-            ? 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(147, 197, 253, 0.7) 100%)'
-            : 'radial-gradient(circle, rgba(191, 219, 254, 0.9) 0%, rgba(147, 197, 253, 0.5) 100%)',
-          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          top: '18%',
+          left: '60%',
+          width: '4px',
+          height: '4px',
+          background: isDarkMode ? '#f8fafc' : '#f8fafc',
           boxShadow: isDarkMode 
-            ? '0 0 28px rgba(255, 255, 255, 0.9), 0 0 55px rgba(147, 197, 253, 0.6)'
-            : '0 0 20px rgba(191, 219, 254, 0.7), 0 0 40px rgba(147, 197, 253, 0.5)',
-          animation: 'twinkle7 3.8s ease-in-out infinite',
-          animationDelay: '2.5s'
-        }}></div>
+            ? '0 0 8px rgba(248, 250, 252, 0.9), 0 0 16px rgba(248, 250, 252, 0.5)' 
+            : '0 0 8px rgba(248, 250, 252, 0.9), 0 0 16px rgba(248, 250, 252, 0.5)',
+          animationDelay: '2s'
+        }} />
+        <div className="star-shape animate-float-and-twinkle" style={{
+          position: 'absolute',
+          bottom: '60%',
+          right: '5%',
+          width: '2px',
+          height: '2px',
+          background: isDarkMode ? '#faf5ff' : '#faf5ff',
+          boxShadow: isDarkMode 
+            ? '0 0 4px rgba(250, 245, 255, 0.9), 0 0 8px rgba(250, 245, 255, 0.5)' 
+            : '0 0 4px rgba(250, 245, 255, 0.9), 0 0 8px rgba(250, 245, 255, 0.5)',
+          animationDelay: '4s'
+        }} />
+        <div className="cross-shape animate-drift-and-spin" style={{
+          position: 'absolute',
+          top: '55%',
+          left: '70%',
+          width: '6px',
+          height: '6px',
+          background: isDarkMode ? '#f0f9ff' : '#f0f9ff',
+          boxShadow: isDarkMode 
+            ? '0 0 10px rgba(240, 249, 255, 0.9), 0 0 20px rgba(240, 249, 255, 0.5)' 
+            : '0 0 10px rgba(240, 249, 255, 0.9), 0 0 20px rgba(240, 249, 255, 0.5)',
+          animationDelay: '1s'
+        }} />
+        <div className="diamond-shape animate-bounce-and-twinkle" style={{
+          position: 'absolute',
+          bottom: '20%',
+          left: '80%',
+          width: '3px',
+          height: '3px',
+          background: isDarkMode ? '#ffffff' : '#ffffff',
+          boxShadow: isDarkMode 
+            ? '0 0 6px rgba(255, 255, 255, 0.9), 0 0 12px rgba(255, 255, 255, 0.5)' 
+            : '0 0 6px rgba(255, 255, 255, 0.9), 0 0 12px rgba(255, 255, 255, 0.5)',
+          animationDelay: '3s'
+        }} />
+        <div className="circle-shape animate-float-and-twinkle" style={{
+          position: 'absolute',
+          top: '75%',
+          left: '10%',
+          width: '5px',
+          height: '5px',
+          background: isDarkMode ? '#faf5ff' : '#faf5ff',
+          boxShadow: isDarkMode 
+            ? '0 0 8px rgba(250, 245, 255, 0.9), 0 0 16px rgba(250, 245, 255, 0.5)' 
+            : '0 0 8px rgba(250, 245, 255, 0.9), 0 0 16px rgba(250, 245, 255, 0.5)',
+          animationDelay: '5s'
+        }} />
+        <div className="star-shape animate-drift-and-spin" style={{
+          position: 'absolute',
+          top: '30%',
+          left: '85%',
+          width: '2px',
+          height: '2px',
+          background: isDarkMode ? '#f0f9ff' : '#f0f9ff',
+          boxShadow: isDarkMode 
+            ? '0 0 4px rgba(240, 249, 255, 0.9), 0 0 8px rgba(240, 249, 255, 0.5)' 
+            : '0 0 4px rgba(240, 249, 255, 0.9), 0 0 8px rgba(240, 249, 255, 0.5)',
+          animationDelay: '2s'
+        }} />
       </div>
 
       {/* Main content */}
@@ -736,7 +637,7 @@ export default function Home() {
             textAlign: 'center',
             width: '100%',
             maxWidth: '400px'
-          }}>
+          }} className="profile-container">
             {/* Profile Image */}
             <div style={{
               marginBottom: '24px',
@@ -771,7 +672,6 @@ export default function Home() {
                   ? '0 12px 40px rgba(168, 85, 247, 0.25), 0 4px 16px rgba(168, 85, 247, 0.15)' 
                   : '0 12px 40px rgba(139, 92, 246, 0.2), 0 4px 16px rgba(139, 92, 246, 0.12)';
               }}>
-                {/* Placeholder for profile image */}
                 <img 
                   src="/profile.jpg" 
                   alt="Alicia Yu"
@@ -805,13 +705,9 @@ export default function Home() {
                 letterSpacing: '-0.02em',
                 position: 'relative',
                 zIndex: 1,
-                textShadow: isDarkMode 
-                  ? '0 0 5px rgba(168, 85, 247, 0.8), 0 0 10px rgba(168, 85, 247, 0.6), 0 0 15px rgba(168, 85, 247, 0.4), 0 0 20px rgba(236, 72, 153, 0.6), 0 0 30px rgba(236, 72, 153, 0.4), 0 0 40px rgba(147, 51, 234, 0.3)'
-                  : 'none',
-                animation: isDarkMode ? 'neonFlicker 3s ease-in-out infinite alternate' : 'none',
                 textAlign: 'center',
                 width: '100%'
-              }}>
+              }} className={isDarkMode ? 'neon-glow' : ''}>
                 alicia yu
               </h1>
               <p style={{
@@ -840,12 +736,8 @@ export default function Home() {
               justifyContent: 'center',
               padding: '0 20px',
               boxSizing: 'border-box'
-            }} className="button-container">{[
-                { icon: Mail, label: 'Email', href: 'mailto:aliciayu@g.ucla.edu' },
-                { icon: FileText, label: 'Resume', href: 'https://drive.google.com/file/d/1548yYWGyIUUR3waotPBRsMFB4XipRdRA/view?usp=sharing' },
-                { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/alliciayu' },
-                { icon: Github, label: 'GitHub', href: 'https://github.com/aliiyuu' }
-              ].map(({ icon: Icon, label, href }, index) => (
+            }} className="button-container">
+              {socialLinks.map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
                   href={href}
@@ -857,10 +749,10 @@ export default function Home() {
                     justifyContent: 'center',
                     gap: '12px',
                     padding: '12px 20px',
-                    backgroundColor: isDarkMode 
-                      ? 'rgba(45, 27, 61, 0.8)' 
-                      : 'rgba(253, 242, 248, 0.8)',
-                    color: isDarkMode ? '#d1c4e9' : '#7C6FBE',
+                    background: isDarkMode 
+                      ? 'linear-gradient(90deg, #f9a8d4 0%, #a78bfa 100%)' 
+                      : 'linear-gradient(90deg, #fde7f4 0%, #e9d5ff 100%)',
+                    color: isDarkMode ? '#4c1d95' : '#7C6FBE',
                     borderRadius: '25px',
                     fontWeight: '500',
                     textDecoration: 'none',
@@ -959,7 +851,7 @@ export default function Home() {
                 paddingBottom: '1.5rem',
                 whiteSpace: 'pre-line'
               }}>
-                {`Hi, I'm Alicia! I'm a fourth-year computer science student at UCLA with a passion for building AI-powered solutions that are not only technically robust, but also ethical, accessible, and impactful. I've developed full-stack applications using frameworks like React, Next.js, and TypeScript, and worked with data science tools such as PyTorch, scikit-learn, and Pandas to create tangible solutions. From crafting LLM-powered chatbots with persistent memory to engineering OCR pipelines that support healthcare providers, I am driven by the intersection of smart technology and practical impact.
+                {`Hi, I'm Alicia! I'm a computer science student at UCLA with a passion for building AI-powered solutions that are not only technically robust, but also ethical, accessible, and impactful. I've developed full-stack applications using frameworks like React, Next.js, and TypeScript, and worked with data science tools such as PyTorch, scikit-learn, and Pandas to create tangible solutions. From crafting LLM-powered chatbots with persistent memory to engineering OCR pipelines that support healthcare providers, I am driven by the intersection of smart technology and practical impact.
 
 I care deeply about making technology work for everyone. That means writing scalable and maintainable code, but also designing with accessibility in mind and considering who gets to benefit from the tools we build. Whether I'm working on backend infrastructure or user-facing apps, I'm always asking: how can this better serve real people?
 
@@ -968,7 +860,7 @@ In my spare time, I enjoy creative writing, language learning, and graphic desig
 Thanks for stopping by! I'm excited to keep learning, building, and pushing for technology that empowers.`}
               </p>
             </div>
-              <p></p>
+            <p></p>
             {/* What I'm Up To Section */}
             <div style={{
               backgroundColor: isDarkMode 
@@ -1023,7 +915,7 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
                 Exploring LLM-aided data storage and migration solutions @ <a href="https://www.avepoint.com/" target="_blank" rel="noopener noreferrer" style={{ color: isDarkMode ? '#d1c4e9' : '#7C6FBE', fontWeight: 'bold', textDecoration: 'underline' }}>AvePoint</a>
               </p>
             </div>
-              <p></p>
+            <p></p>
             {/* What I'm Listening To Section */}
             <div style={{
               backgroundColor: isDarkMode 
@@ -1081,690 +973,6 @@ Thanks for stopping by! I'm excited to keep learning, building, and pushing for 
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) translateX(0px); }
-          25% { transform: translateY(-15px) translateX(8px); }
-          50% { transform: translateY(-8px) translateX(-5px); }
-          75% { transform: translateY(-12px) translateX(10px); }
-        }
-        
-        @keyframes cloudFloat1 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.8;
-          }
-          25% { 
-            transform: translateY(-30px) translateX(40px) scale(1.1);
-            opacity: 1;
-          }
-          50% { 
-            transform: translateY(-15px) translateX(-20px) scale(0.9);
-            opacity: 0.7;
-          }
-          75% { 
-            transform: translateY(-45px) translateX(60px) scale(1.05);
-            opacity: 0.9;
-          }
-        }
-        
-        @keyframes cloudFloat2 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.9;
-          }
-          30% { 
-            transform: translateY(-25px) translateX(-50px) scale(1.15);
-            opacity: 1;
-          }
-          60% { 
-            transform: translateY(-40px) translateX(30px) scale(0.85);
-            opacity: 0.6;
-          }
-          90% { 
-            transform: translateY(-10px) translateX(-70px) scale(1.1);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes cloudFloat3 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.7;
-          }
-          35% { 
-            transform: translateY(-35px) translateX(45px) scale(0.9);
-            opacity: 1;
-          }
-          70% { 
-            transform: translateY(-20px) translateX(-25px) scale(1.2);
-            opacity: 0.8;
-          }
-        }
-        
-        @keyframes cloudFloat4 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.8;
-          }
-          40% { 
-            transform: translateY(-28px) translateX(-35px) scale(1.08);
-            opacity: 1;
-          }
-          80% { 
-            transform: translateY(-50px) translateX(55px) scale(0.95);
-            opacity: 0.6;
-          }
-        }
-        
-        @keyframes cloudFloat5 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.9;
-          }
-          20% { 
-            transform: translateY(-40px) translateX(25px) scale(0.8);
-            opacity: 0.7;
-          }
-          50% { 
-            transform: translateY(-15px) translateX(-40px) scale(1.3);
-            opacity: 1;
-          }
-          80% { 
-            transform: translateY(-32px) translateX(15px) scale(1.05);
-            opacity: 0.8;
-          }
-        }
-        
-        @keyframes cloudFloat6 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.8;
-          }
-          25% { 
-            transform: translateY(-22px) translateX(-45px) scale(1.12);
-            opacity: 1;
-          }
-          50% { 
-            transform: translateY(-38px) translateX(35px) scale(0.88);
-            opacity: 0.7;
-          }
-          75% { 
-            transform: translateY(-12px) translateX(-60px) scale(1.07);
-            opacity: 0.9;
-          }
-        }
-        
-        @keyframes star1 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.4;
-          }
-          25% { 
-            transform: translateY(-40px) translateX(30px) scale(1.5) rotate(45deg);
-            opacity: 1;
-          }
-          50% { 
-            transform: translateY(-20px) translateX(-15px) scale(0.7) rotate(90deg);
-            opacity: 0.6;
-          }
-          75% { 
-            transform: translateY(-60px) translateX(45px) scale(1.2) rotate(135deg);
-            opacity: 0.9;
-          }
-        }
-        
-        @keyframes star2 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.5;
-          }
-          30% { 
-            transform: translateY(-25px) translateX(-20px) scale(1.8) rotate(60deg);
-            opacity: 1;
-          }
-          60% { 
-            transform: translateY(-45px) translateX(25px) scale(0.6) rotate(120deg);
-            opacity: 0.3;
-          }
-          90% { 
-            transform: translateY(-15px) translateX(-35px) scale(1.3) rotate(180deg);
-            opacity: 0.8;
-          }
-        }
-        
-        @keyframes star3 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.6;
-          }
-          20% { 
-            transform: translateY(-30px) translateX(20px) scale(0.8) rotate(72deg);
-            opacity: 0.8;
-          }
-          40% { 
-            transform: translateY(-10px) translateX(-25px) scale(1.6) rotate(144deg);
-            opacity: 1;
-          }
-          80% { 
-            transform: translateY(-50px) translateX(15px) scale(0.9) rotate(216deg);
-            opacity: 0.5;
-          }
-        }
-        
-        @keyframes star4 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.4;
-          }
-          35% { 
-            transform: translateY(-35px) translateX(-30px) scale(1.4) rotate(90deg);
-            opacity: 0.9;
-          }
-          70% { 
-            transform: translateY(-15px) translateX(40px) scale(1.7) rotate(180deg);
-            opacity: 0.7;
-          }
-        }
-        
-        @keyframes star5 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.5;
-          }
-          40% { 
-            transform: translateY(-20px) translateX(25px) scale(0.7) rotate(108deg);
-            opacity: 0.8;
-          }
-          80% { 
-            transform: translateY(-40px) translateX(-20px) scale(1.5) rotate(216deg);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes star6 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.6;
-          }
-          25% { 
-            transform: translateY(-25px) translateX(-35px) scale(1.3) rotate(72deg);
-            opacity: 1;
-          }
-          50% { 
-            transform: translateY(-45px) translateX(10px) scale(0.8) rotate(144deg);
-            opacity: 0.5;
-          }
-          75% { 
-            transform: translateY(-10px) translateX(30px) scale(1.8) rotate(216deg);
-            opacity: 0.9;
-          }
-        }
-        
-        @keyframes star7 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.4;
-          }
-          30% { 
-            transform: translateY(-40px) translateX(30px) scale(1.6) rotate(90deg);
-            opacity: 0.9;
-          }
-          60% { 
-            transform: translateY(-15px) translateX(-25px) scale(0.9) rotate(180deg);
-            opacity: 0.7;
-          }
-          90% { 
-            transform: translateY(-55px) translateX(15px) scale(1.2) rotate(270deg);
-            opacity: 0.6;
-          }
-        }
-        
-        @keyframes star8 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.5;
-          }
-          25% { 
-            transform: translateY(-30px) translateX(-20px) scale(0.8) rotate(95deg);
-            opacity: 0.8;
-          }
-          50% { 
-            transform: translateY(-50px) translateX(35px) scale(1.7) rotate(190deg);
-            opacity: 1;
-          }
-          75% { 
-            transform: translateY(-20px) translateX(-40px) scale(1.1) rotate(285deg);
-            opacity: 0.6;
-          }
-        }
-        
-        @keyframes star9 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.3;
-          }
-          40% { 
-            transform: translateY(-35px) translateX(20px) scale(1.4) rotate(110deg);
-            opacity: 0.9;
-          }
-          80% { 
-            transform: translateY(-25px) translateX(-30px) scale(0.7) rotate(220deg);
-            opacity: 0.5;
-          }
-        }
-        
-        @keyframes star10 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.6;
-          }
-          35% { 
-            transform: translateY(-45px) translateX(-15px) scale(1.3) rotate(85deg);
-            opacity: 1;
-          }
-          70% { 
-            transform: translateY(-10px) translateX(45px) scale(1.8) rotate(170deg);
-            opacity: 0.8;
-          }
-        }
-        
-        @keyframes star11 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.5;
-          }
-          20% { 
-            transform: translateY(-25px) translateX(25px) scale(0.9) rotate(75deg);
-            opacity: 0.7;
-          }
-          45% { 
-            transform: translateY(-60px) translateX(-35px) scale(1.6) rotate(150deg);
-            opacity: 1;
-          }
-          80% { 
-            transform: translateY(-40px) translateX(10px) scale(1.1) rotate(225deg);
-            opacity: 0.6;
-          }
-        }
-        
-        @keyframes star12 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.4;
-          }
-          50% { 
-            transform: translateY(-30px) translateX(-20px) scale(1.5) rotate(180deg);
-            opacity: 0.9;
-          }
-        }
-        
-        @keyframes star13 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-            opacity: 0.7;
-          }
-          25% { 
-            transform: translateY(-50px) translateX(40px) scale(0.8) rotate(92deg);
-            opacity: 0.9;
-          }
-          50% { 
-            transform: translateY(-20px) translateX(-45px) scale(1.9) rotate(184deg);
-            opacity: 1;
-          }
-          75% { 
-            transform: translateY(-65px) translateX(20px) scale(1.2) rotate(276deg);
-            opacity: 0.8;
-          }
-        }
-        
-        @keyframes wisp1 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.3;
-          }
-          25% { 
-            transform: translateY(-80px) translateX(60px) scale(1.5);
-            opacity: 0.8;
-          }
-          50% { 
-            transform: translateY(-40px) translateX(-30px) scale(0.7);
-            opacity: 1;
-          }
-          75% { 
-            transform: translateY(-120px) translateX(90px) scale(1.2);
-            opacity: 0.6;
-          }
-        }
-        
-        @keyframes wisp2 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.4;
-          }
-          30% { 
-            transform: translateY(-60px) translateX(-50px) scale(1.3);
-            opacity: 0.9;
-          }
-          60% { 
-            transform: translateY(-100px) translateX(40px) scale(0.8);
-            opacity: 0.7;
-          }
-          90% { 
-            transform: translateY(-30px) translateX(-80px) scale(1.1);
-            opacity: 0.5;
-          }
-        }
-        
-        @keyframes wisp3 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.5;
-          }
-          20% { 
-            transform: translateY(-90px) translateX(30px) scale(0.6);
-            opacity: 0.7;
-          }
-          45% { 
-            transform: translateY(-60px) translateX(-70px) scale(1.4);
-            opacity: 1;
-          }
-          70% { 
-            transform: translateY(-140px) translateX(100px) scale(0.9);
-            opacity: 0.8;
-          }
-        }
-        
-        @keyframes wisp4 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.3;
-          }
-          35% { 
-            transform: translateY(-70px) translateX(-40px) scale(1.6);
-            opacity: 0.9;
-          }
-          65% { 
-            transform: translateY(-110px) translateX(20px) scale(0.5);
-            opacity: 0.6;
-          }
-        }
-        
-        @keyframes wisp5 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.4;
-          }
-          25% { 
-            transform: translateY(-50px) translateX(80px) scale(1.2);
-            opacity: 0.8;
-          }
-          50% { 
-            transform: translateY(-130px) translateX(-60px) scale(0.7);
-            opacity: 1;
-          }
-          75% { 
-            transform: translateY(-80px) translateX(120px) scale(1.3);
-            opacity: 0.6;
-          }
-        }
-        
-        @keyframes wisp6 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.2;
-          }
-          40% { 
-            transform: translateY(-95px) translateX(-90px) scale(1.4);
-            opacity: 0.7;
-          }
-          80% { 
-            transform: translateY(-40px) translateX(110px) scale(0.8);
-            opacity: 0.9;
-          }
-        }
-        
-        @keyframes wisp7 {
-          0%, 100% { 
-            transform: translateY(0px) translateX(0px) scale(1);
-            opacity: 0.5;
-          }
-          30% { 
-            transform: translateY(-100px) translateX(70px) scale(0.6);
-            opacity: 0.8;
-          }
-          60% { 
-            transform: translateY(-160px) translateX(-50px) scale(1.5);
-            opacity: 1;
-          }
-          90% { 
-            transform: translateY(-70px) translateX(140px) scale(1.1);
-            opacity: 0.7;
-          }
-        }
-        
-        @keyframes neonFlicker {
-          0%, 100% {
-            text-shadow: 0 0 5px rgba(168, 85, 247, 0.8), 0 0 10px rgba(168, 85, 247, 0.6), 0 0 15px rgba(168, 85, 247, 0.4), 0 0 20px rgba(236, 72, 153, 0.6), 0 0 30px rgba(236, 72, 153, 0.4), 0 0 40px rgba(147, 51, 234, 0.3);
-          }
-          25% {
-            text-shadow: 0 0 2px rgba(168, 85, 247, 0.9), 0 0 5px rgba(168, 85, 247, 0.7), 0 0 8px rgba(168, 85, 247, 0.5), 0 0 12px rgba(236, 72, 153, 0.7), 0 0 18px rgba(236, 72, 153, 0.5), 0 0 25px rgba(147, 51, 234, 0.4);
-          }
-          50% {
-            text-shadow: 0 0 7px rgba(168, 85, 247, 0.9), 0 0 15px rgba(168, 85, 247, 0.7), 0 0 25px rgba(168, 85, 247, 0.5), 0 0 35px rgba(236, 72, 153, 0.7), 0 0 45px rgba(236, 72, 153, 0.5), 0 0 55px rgba(147, 51, 234, 0.4);
-          }
-          75% {
-            text-shadow: 0 0 3px rgba(168, 85, 247, 0.8), 0 0 8px rgba(168, 85, 247, 0.6), 0 0 12px rgba(168, 85, 247, 0.4), 0 0 16px rgba(236, 72, 153, 0.6), 0 0 22px rgba(236, 72, 153, 0.4), 0 0 30px rgba(147, 51, 234, 0.3);
-          }
-        }
-        
-        .desktop-horizontal {
-          flex-direction: row;
-        }
-        
-        @media (max-width: 1400px) {
-          .desktop-horizontal {
-            flex-direction: column !important;
-            gap: 40px !important;
-            text-align: center;
-          }
-          
-          .desktop-horizontal > div:first-child {
-            align-items: center !important;
-            text-align: center !important;
-          }
-          
-          .desktop-horizontal > div:first-child > div:last-child {
-            flex-direction: row !important;
-            flex-wrap: wrap !important;
-            justify-content: center !important;
-            max-width: none !important;
-            gap: 12px !important;
-          }
-          
-          .desktop-horizontal > div:first-child > div:last-child > a {
-            width: auto !important;
-            justify-content: center !important;
-            padding: 10px 20px !important;
-            min-width: 120px;
-          }
-        }
-        
-        /* Universal profile picture fix to ensure it's always circular */
-        .profile-container > div {
-          aspect-ratio: 1 !important;
-        }
-        
-        @media (min-width: 481px) and (max-width: 800px) {
-          /* Fix for medium screens like 683px where oval issues occur */
-          .profile-container > div {
-            width: min(240px, calc(100vw - 100px)) !important;
-            height: min(240px, calc(100vw - 100px)) !important;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          h1 { font-size: 3.5rem !important; }
-        }
-        
-        @media (max-width: 600px) {
-          .desktop-horizontal > div:first-child {
-            align-items: center !important;
-            margin: 0 auto !important;
-            width: 100% !important;
-          }
-          
-          .desktop-horizontal > div:first-child > div:last-child {
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            margin: 0 auto !important;
-          }
-          
-          .desktop-horizontal > div:first-child > div:last-child > a {
-            width: 200px !important;
-            justify-content: center !important;
-            padding: 12px 20px !important;
-            text-align: center !important;
-            margin: 0 auto !important;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          h1 { 
-            font-size: 3rem !important; 
-            width: 100% !important;
-            margin: 0 0 8px 0 !important;
-          }
-          
-          .desktop-horizontal > div:first-child {
-            align-items: center !important;
-            margin: 0 auto !important;
-            width: 100% !important;
-          }
-          
-          /* Reduce main container padding for more horizontal space */
-          .main-container {
-            padding: 60px 16px !important;
-          }
-          
-          /* Allow text boxes to use more width */
-          .text-content-container {
-            max-width: none !important;
-            width: 100% !important;
-          }
-          
-          /* Ensure button container fits within screen */
-          .button-container {
-            max-width: calc(100vw - 40px) !important;
-            padding: 0 5px !important;
-          }
-          
-          .button-container a {
-            max-width: 180px !important;
-            padding: 10px 15px !important;
-            font-size: 0.9rem !important;
-          }
-          
-          /* Ensure profile picture always fits within screen boundaries */
-          .profile-container {
-            padding: 0 15px !important;
-          }
-          
-          .profile-container > div {
-            width: min(200px, calc(100vw - 60px)) !important;
-            height: min(200px, calc(100vw - 60px)) !important;
-          }
-        }
-        
-        @media (max-width: 375px) {
-          /* Even smaller margins for very small screens */
-          .main-container {
-            padding: 40px 8px !important;
-          }
-          
-          /* Ensure button container fits within very small screens */
-          .button-container {
-            max-width: calc(100vw - 20px) !important;
-            padding: 0 2px !important;
-          }
-          
-          .button-container a {
-            max-width: 160px !important;
-            padding: 8px 12px !important;
-            font-size: 0.85rem !important;
-          }
-          
-          .profile-container {
-            padding: 0 10px !important;
-          }
-          
-          .profile-container > div {
-            width: min(180px, calc(100vw - 40px)) !important;
-            height: min(180px, calc(100vw - 40px)) !important;
-          }
-        }
-        
-        @media (max-width: 320px) {
-          /* Minimal margins for very narrow screens (iPhone SE, etc.) */
-          .main-container {
-            padding: 30px 6px !important;
-          }
-          
-          /* Ensure button container fits within extremely narrow screens */
-          .button-container {
-            max-width: calc(100vw - 16px) !important;
-            padding: 0 !important;
-          }
-          
-          .button-container a {
-            max-width: 140px !important;
-            padding: 8px 10px !important;
-            font-size: 0.8rem !important;
-          }
-          
-          .profile-container {
-            padding: 0 8px !important;
-          }
-          
-          .profile-container > div {
-            max-width: calc(100vw - 32px) !important;
-            max-height: calc(100vw - 32px) !important;
-          }
-          
-          .button-container {
-            padding: 0 8px !important;
-            max-width: calc(100vw - 32px) !important;
-          }
-          
-          .button-container a {
-            padding: 10px 15px !important;
-            font-size: 0.85rem !important;
-            gap: 8px !important;
-          }
-        }
-        
-        /* Portrait orientation optimizations */
-        @media (orientation: portrait) and (max-width: 414px) {
-          .profile-container > div {
-            width: min(200px, calc(100vw - 80px)) !important;
-            height: min(200px, calc(100vw - 80px)) !important;
-          }
-          
-          .button-container {
-            max-width: calc(100vw - 40px) !important;
-            padding: 0 15px !important;
-          }
-          
-          .button-container a {
-            max-width: 100% !important;
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-          }
-        }
-      `}</style>
     </div>
-  )
+  );
 }
