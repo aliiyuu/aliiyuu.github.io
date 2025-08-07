@@ -2,8 +2,6 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/aliiyuu.github.io',
-  assetPrefix: '/aliiyuu.github.io/',
   images: {
     unoptimized: true,
   },
