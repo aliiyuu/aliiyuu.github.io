@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -14,7 +15,6 @@ export default function Home() {
 
   const socialLinks: SocialLink[] = [
     { icon: Mail, label: 'Email', href: 'mailto:aliciayu@g.ucla.edu' },
-    { icon: FileText, label: 'Resume', href: 'https://drive.google.com/file/d/16_ss3T7sBmps-AdjIaRuo5mATmtl36z8/view?usp=sharing' },
     { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/alliciayu' },
     { icon: Github, label: 'GitHub', href: 'https://github.com/aliiyuu' }
   ];
@@ -84,6 +84,233 @@ export default function Home() {
         overflow: 'hidden',
         pointerEvents: 'none'
       }}>
+          {/* Neon pink will-o'-the-wisps */}
+          <div className="animate-bounce-and-twinkle" style={{
+            position: 'absolute',
+            top: '18%',
+            left: '18%',
+            width: '38px',
+            height: '38px',
+            background: 'radial-gradient(circle, rgba(236,72,153,0.85) 0%, rgba(236,72,153,0.35) 60%, transparent 100%)',
+            borderRadius: '50%',
+            filter: 'blur(8px)',
+            boxShadow: '0 0 32px 8px #ec4899, 0 0 64px 16px #f472b6',
+            opacity: 0.85,
+            animationDelay: '1.2s',
+            zIndex: 1
+          }} />
+          <div className="animate-cloud-bounce-wild" style={{
+            position: 'absolute',
+            top: '60%',
+            left: '12%',
+            width: '28px',
+            height: '28px',
+            background: 'radial-gradient(circle, rgba(236,72,153,0.7) 0%, rgba(236,72,153,0.25) 60%, transparent 100%)',
+            borderRadius: '50%',
+            filter: 'blur(10px)',
+            boxShadow: '0 0 24px 6px #ec4899, 0 0 48px 12px #f472b6',
+            opacity: 0.7,
+            animationDelay: '2.5s',
+            zIndex: 1
+          }} />
+          <div className="animate-cloud-drift-fast" style={{
+            position: 'absolute',
+            top: '35%',
+            right: '22%',
+            width: '44px',
+            height: '44px',
+            background: 'radial-gradient(circle, rgba(236,72,153,0.9) 0%, rgba(236,72,153,0.4) 60%, transparent 100%)',
+            borderRadius: '50%',
+            filter: 'blur(12px)',
+            boxShadow: '0 0 40px 10px #ec4899, 0 0 80px 20px #f472b6',
+            opacity: 0.9,
+            animationDelay: '3.7s',
+            zIndex: 1
+          }} />
+          <div className="animate-bounce-and-twinkle" style={{
+            position: 'absolute',
+            bottom: '18%',
+            right: '15%',
+            width: '32px',
+            height: '32px',
+            background: 'radial-gradient(circle, rgba(236,72,153,0.8) 0%, rgba(236,72,153,0.3) 60%, transparent 100%)',
+            borderRadius: '50%',
+            filter: 'blur(9px)',
+            boxShadow: '0 0 28px 7px #ec4899, 0 0 56px 14px #f472b6',
+            opacity: 0.8,
+            animationDelay: '4.1s',
+            zIndex: 1
+          }} />
+          <div className="animate-cloud-bounce-wild" style={{
+            position: 'absolute',
+            bottom: '30%',
+            left: '40%',
+            width: '36px',
+            height: '36px',
+            background: 'radial-gradient(circle, rgba(236,72,153,0.75) 0%, rgba(236,72,153,0.28) 60%, transparent 100%)',
+            borderRadius: '50%',
+            filter: 'blur(11px)',
+            boxShadow: '0 0 30px 8px #ec4899, 0 0 60px 16px #f472b6',
+            opacity: 0.75,
+            animationDelay: '5.3s',
+            zIndex: 1
+          }} />
+          {/* Larger floating clouds for dramatic effect */}
+          {/* Fluffier clouds: more overlap, higher border-radius, softer blur */}
+          <div className="animate-cloud-drift-slow" style={{
+            position: 'absolute',
+            top: '10%',
+            left: '28%',
+            width: '340px',
+            height: '130px',
+            background: isDarkMode
+              ? 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.38) 0%, rgba(168, 85, 247, 0.18) 40%, rgba(168, 85, 247, 0.08) 70%, transparent 100%)'
+              : 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.28) 0%, rgba(168, 85, 247, 0.13) 40%, rgba(168, 85, 247, 0.05) 70%, transparent 100%)',
+            borderRadius: '100px',
+            filter: 'blur(40px)',
+            boxShadow: isDarkMode
+              ? '0 0 100px rgba(168, 85, 247, 0.3), 0 0 200px rgba(168, 85, 247, 0.12)'
+              : '0 0 80px rgba(168, 85, 247, 0.18), 0 0 160px rgba(168, 85, 247, 0.09)',
+            animationDelay: '2s',
+            zIndex: 2
+          }} />
+          <div className="animate-cloud-drift-slow" style={{
+            position: 'absolute',
+            top: '13%',
+            left: '36%',
+            width: '180px',
+            height: '90px',
+            background: isDarkMode
+              ? 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.22) 0%, rgba(168, 85, 247, 0.12) 40%, rgba(168, 85, 247, 0.05) 70%, transparent 100%)'
+              : 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.08) 40%, rgba(168, 85, 247, 0.03) 70%, transparent 100%)',
+            borderRadius: '90px',
+            filter: 'blur(30px)',
+            boxShadow: isDarkMode
+              ? '0 0 60px rgba(168, 85, 247, 0.18)'
+              : '0 0 40px rgba(168, 85, 247, 0.09)',
+            animationDelay: '2.7s',
+            zIndex: 2
+          }} />
+          <div className="animate-cloud-float-gentle" style={{
+            position: 'absolute',
+            bottom: '10%',
+            right: '18%',
+            width: '410px',
+            height: '150px',
+            background: isDarkMode
+              ? 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.32) 0%, rgba(59, 130, 246, 0.15) 40%, rgba(59, 130, 246, 0.06) 70%, transparent 100%)'
+              : 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.22) 0%, rgba(59, 130, 246, 0.09) 40%, rgba(59, 130, 246, 0.03) 70%, transparent 100%)',
+            borderRadius: '120px',
+            filter: 'blur(45px)',
+            boxShadow: isDarkMode
+              ? '0 0 120px rgba(59, 130, 246, 0.22), 0 0 240px rgba(59, 130, 246, 0.09)'
+              : '0 0 90px rgba(59, 130, 246, 0.12), 0 0 180px rgba(59, 130, 246, 0.05)',
+            animationDelay: '3.5s',
+            zIndex: 2
+          }} />
+          <div className="animate-cloud-float-gentle" style={{
+            position: 'absolute',
+            bottom: '13%',
+            right: '25%',
+            width: '160px',
+            height: '70px',
+            background: isDarkMode
+              ? 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.18) 0%, rgba(59, 130, 246, 0.09) 40%, rgba(59, 130, 246, 0.03) 70%, transparent 100%)'
+              : 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, rgba(59, 130, 246, 0.05) 40%, rgba(59, 130, 246, 0.02) 70%, transparent 100%)',
+            borderRadius: '70px',
+            filter: 'blur(30px)',
+            boxShadow: isDarkMode
+              ? '0 0 40px rgba(59, 130, 246, 0.09)'
+              : '0 0 30px rgba(59, 130, 246, 0.05)',
+            animationDelay: '4.2s',
+            zIndex: 2
+          }} />
+          <div className="animate-cloud-bounce-wild" style={{
+            position: 'absolute',
+            top: '60%',
+            left: '60%',
+            width: '320px',
+            height: '110px',
+            background: isDarkMode
+              ? 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.28) 0%, rgba(236, 72, 153, 0.13) 40%, rgba(236, 72, 153, 0.05) 70%, transparent 100%)'
+              : 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.18) 0%, rgba(236, 72, 153, 0.08) 40%, rgba(236, 72, 153, 0.03) 70%, transparent 100%)',
+            borderRadius: '90px',
+            filter: 'blur(38px)',
+            boxShadow: isDarkMode
+              ? '0 0 90px rgba(236, 72, 153, 0.12), 0 0 180px rgba(236, 72, 153, 0.05)'
+              : '0 0 70px rgba(236, 72, 153, 0.07), 0 0 140px rgba(236, 72, 153, 0.03)',
+            animationDelay: '5s',
+            zIndex: 2
+          }} />
+          <div className="animate-cloud-bounce-wild" style={{
+            position: 'absolute',
+            top: '63%',
+            left: '68%',
+            width: '120px',
+            height: '60px',
+            background: isDarkMode
+              ? 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.13) 0%, rgba(236, 72, 153, 0.06) 40%, rgba(236, 72, 153, 0.02) 70%, transparent 100%)'
+              : 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.08) 0%, rgba(236, 72, 153, 0.03) 40%, rgba(236, 72, 153, 0.01) 70%, transparent 100%)',
+            borderRadius: '60px',
+            filter: 'blur(25px)',
+            boxShadow: isDarkMode
+              ? '0 0 30px rgba(236, 72, 153, 0.05)'
+              : '0 0 20px rgba(236, 72, 153, 0.02)',
+            animationDelay: '5.7s',
+            zIndex: 2
+          }} />
+          {/* Larger floating clouds for dramatic effect - now correctly placed */}
+          <div className="animate-cloud-drift-slow" style={{
+            position: 'absolute',
+            top: '10%',
+            left: '30%',
+            width: '350px',
+            height: '120px',
+            background: isDarkMode
+              ? 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.45) 0%, rgba(168, 85, 247, 0.22) 40%, rgba(168, 85, 247, 0.10) 70%, transparent 100%)'
+              : 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.32) 0%, rgba(168, 85, 247, 0.18) 40%, rgba(168, 85, 247, 0.08) 70%, transparent 100%)',
+            borderRadius: '60px',
+            filter: 'blur(30px)',
+            boxShadow: isDarkMode
+              ? '0 0 80px rgba(168, 85, 247, 0.4), 0 0 160px rgba(168, 85, 247, 0.18)'
+              : '0 0 60px rgba(168, 85, 247, 0.28), 0 0 120px rgba(168, 85, 247, 0.13)',
+            animationDelay: '2s',
+            zIndex: 2
+          }} />
+          <div className="animate-cloud-float-gentle" style={{
+            position: 'absolute',
+            bottom: '10%',
+            right: '20%',
+            width: '400px',
+            height: '140px',
+            background: isDarkMode
+              ? 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.38) 0%, rgba(59, 130, 246, 0.18) 40%, rgba(59, 130, 246, 0.08) 70%, transparent 100%)'
+              : 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.28) 0%, rgba(59, 130, 246, 0.13) 40%, rgba(59, 130, 246, 0.06) 70%, transparent 100%)',
+            borderRadius: '70px',
+            filter: 'blur(35px)',
+            boxShadow: isDarkMode
+              ? '0 0 90px rgba(59, 130, 246, 0.32), 0 0 180px rgba(59, 130, 246, 0.15)'
+              : '0 0 70px rgba(59, 130, 246, 0.22), 0 0 140px rgba(59, 130, 246, 0.09)',
+            animationDelay: '3.5s',
+            zIndex: 2
+          }} />
+          <div className="animate-cloud-bounce-wild" style={{
+            position: 'absolute',
+            top: '60%',
+            left: '60%',
+            width: '320px',
+            height: '110px',
+            background: isDarkMode
+              ? 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.32) 0%, rgba(236, 72, 153, 0.16) 40%, rgba(236, 72, 153, 0.07) 70%, transparent 100%)'
+              : 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.22) 0%, rgba(236, 72, 153, 0.11) 40%, rgba(236, 72, 153, 0.05) 70%, transparent 100%)',
+            borderRadius: '55px',
+            filter: 'blur(28px)',
+            boxShadow: isDarkMode
+              ? '0 0 70px rgba(236, 72, 153, 0.22), 0 0 140px rgba(236, 72, 153, 0.09)'
+              : '0 0 55px rgba(236, 72, 153, 0.14), 0 0 110px rgba(236, 72, 153, 0.06)',
+            animationDelay: '5s',
+            zIndex: 2
+          }} />
         {/* Floating background orbs */}
         <div style={{
           position: 'absolute',
@@ -196,6 +423,108 @@ export default function Home() {
           boxShadow: isDarkMode 
             ? '0 0 40px rgba(147, 51, 234, 0.5), 0 0 80px rgba(147, 51, 234, 0.2)' 
             : '0 0 35px rgba(147, 51, 234, 0.4), 0 0 70px rgba(147, 51, 234, 0.15)'
+        }} />
+
+        {/* Larger floating clouds for dramatic effect - now with higher opacity and zIndex */}
+        <div className="animate-cloud-drift-slow" style={{
+          position: 'absolute',
+          top: '10%',
+          left: '30%',
+          width: '350px',
+          height: '120px',
+          background: isDarkMode
+            ? 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.45) 0%, rgba(168, 85, 247, 0.22) 40%, rgba(168, 85, 247, 0.10) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.32) 0%, rgba(168, 85, 247, 0.18) 40%, rgba(168, 85, 247, 0.08) 70%, transparent 100%)',
+          borderRadius: '60px',
+          filter: 'blur(30px)',
+          boxShadow: isDarkMode
+            ? '0 0 80px rgba(168, 85, 247, 0.4), 0 0 160px rgba(168, 85, 247, 0.18)'
+            : '0 0 60px rgba(168, 85, 247, 0.28), 0 0 120px rgba(168, 85, 247, 0.13)',
+          animationDelay: '2s',
+          zIndex: 2
+        }} />
+        <div className="animate-cloud-float-gentle" style={{
+          position: 'absolute',
+          bottom: '10%',
+          right: '20%',
+          width: '400px',
+          height: '140px',
+          background: isDarkMode
+            ? 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.38) 0%, rgba(59, 130, 246, 0.18) 40%, rgba(59, 130, 246, 0.08) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.28) 0%, rgba(59, 130, 246, 0.13) 40%, rgba(59, 130, 246, 0.06) 70%, transparent 100%)',
+          borderRadius: '70px',
+          filter: 'blur(35px)',
+          boxShadow: isDarkMode
+            ? '0 0 90px rgba(59, 130, 246, 0.32), 0 0 180px rgba(59, 130, 246, 0.15)'
+            : '0 0 70px rgba(59, 130, 246, 0.22), 0 0 140px rgba(59, 130, 246, 0.09)',
+          animationDelay: '3.5s',
+          zIndex: 2
+        }} />
+        <div className="animate-cloud-bounce-wild" style={{
+          position: 'absolute',
+          top: '60%',
+          left: '60%',
+          width: '320px',
+          height: '110px',
+          background: isDarkMode
+            ? 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.32) 0%, rgba(236, 72, 153, 0.16) 40%, rgba(236, 72, 153, 0.07) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.22) 0%, rgba(236, 72, 153, 0.11) 40%, rgba(236, 72, 153, 0.05) 70%, transparent 100%)',
+          borderRadius: '55px',
+          filter: 'blur(28px)',
+          boxShadow: isDarkMode
+            ? '0 0 70px rgba(236, 72, 153, 0.22), 0 0 140px rgba(236, 72, 153, 0.09)'
+            : '0 0 55px rgba(236, 72, 153, 0.14), 0 0 110px rgba(236, 72, 153, 0.06)',
+          animationDelay: '5s',
+          zIndex: 2
+        }} />
+        {/* Larger floating clouds for dramatic effect */}
+        <div className="animate-cloud-drift-slow" style={{
+          position: 'absolute',
+          top: '10%',
+          left: '30%',
+          width: '350px',
+          height: '120px',
+          background: isDarkMode
+            ? 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.25) 0%, rgba(168, 85, 247, 0.12) 40%, rgba(168, 85, 247, 0.05) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.18) 0%, rgba(168, 85, 247, 0.09) 40%, rgba(168, 85, 247, 0.03) 70%, transparent 100%)',
+          borderRadius: '60px',
+          filter: 'blur(40px)',
+          boxShadow: isDarkMode
+            ? '0 0 80px rgba(168, 85, 247, 0.3), 0 0 160px rgba(168, 85, 247, 0.12)'
+            : '0 0 60px rgba(168, 85, 247, 0.22), 0 0 120px rgba(168, 85, 247, 0.09)',
+          animationDelay: '2s'
+        }} />
+        <div className="animate-cloud-float-gentle" style={{
+          position: 'absolute',
+          bottom: '10%',
+          right: '20%',
+          width: '400px',
+          height: '140px',
+          background: isDarkMode
+            ? 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.22) 0%, rgba(59, 130, 246, 0.11) 40%, rgba(59, 130, 246, 0.04) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.16) 0%, rgba(59, 130, 246, 0.08) 40%, rgba(59, 130, 246, 0.03) 70%, transparent 100%)',
+          borderRadius: '70px',
+          filter: 'blur(45px)',
+          boxShadow: isDarkMode
+            ? '0 0 90px rgba(59, 130, 246, 0.28), 0 0 180px rgba(59, 130, 246, 0.11)'
+            : '0 0 70px rgba(59, 130, 246, 0.18), 0 0 140px rgba(59, 130, 246, 0.08)',
+          animationDelay: '3.5s'
+        }} />
+        <div className="animate-cloud-bounce-wild" style={{
+          position: 'absolute',
+          top: '60%',
+          left: '60%',
+          width: '320px',
+          height: '110px',
+          background: isDarkMode
+            ? 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.18) 0%, rgba(236, 72, 153, 0.09) 40%, rgba(236, 72, 153, 0.03) 70%, transparent 100%)'
+            : 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.13) 0%, rgba(236, 72, 153, 0.06) 40%, rgba(236, 72, 153, 0.02) 70%, transparent 100%)',
+          borderRadius: '55px',
+          filter: 'blur(38px)',
+          boxShadow: isDarkMode
+            ? '0 0 70px rgba(236, 72, 153, 0.22), 0 0 140px rgba(236, 72, 153, 0.09)'
+            : '0 0 55px rgba(236, 72, 153, 0.14), 0 0 110px rgba(236, 72, 153, 0.06)',
+          animationDelay: '5s'
         }} />
         <div className="animate-cloud-bounce-wild" style={{
           position: 'absolute',
@@ -417,6 +746,67 @@ export default function Home() {
           boxShadow: isDarkMode 
             ? '0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(255, 255, 255, 0.5)' 
             : '0 0 8px rgba(248, 250, 252, 0.9), 0 0 16px rgba(248, 250, 252, 0.5)'
+        }} />
+        {/* Additional floating stars for denser effect */}
+        <div className="star-shape animate-float-and-twinkle" style={{
+          position: 'absolute',
+          top: '12%',
+          left: '32%',
+          width: '5px',
+          height: '5px',
+          background: isDarkMode ? '#f8fafc' : '#f8fafc',
+          boxShadow: isDarkMode 
+            ? '0 0 7px rgba(255,255,255,0.8), 0 0 14px rgba(255,255,255,0.4)'
+            : '0 0 7px rgba(248,250,252,0.8), 0 0 14px rgba(248,250,252,0.4)',
+          animationDelay: '1.5s'
+        }} />
+        <div className="star-shape animate-float-and-twinkle" style={{
+          position: 'absolute',
+          top: '22%',
+          left: '12%',
+          width: '4px',
+          height: '4px',
+          background: isDarkMode ? '#f0f9ff' : '#f0f9ff',
+          boxShadow: isDarkMode 
+            ? '0 0 6px rgba(240,249,255,0.8), 0 0 12px rgba(240,249,255,0.4)'
+            : '0 0 6px rgba(240,249,255,0.8), 0 0 12px rgba(240,249,255,0.4)',
+          animationDelay: '2.2s'
+        }} />
+        <div className="star-shape animate-float-and-twinkle" style={{
+          position: 'absolute',
+          top: '60%',
+          left: '18%',
+          width: '7px',
+          height: '7px',
+          background: isDarkMode ? '#ffffff' : '#ffffff',
+          boxShadow: isDarkMode 
+            ? '0 0 10px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.5)'
+            : '0 0 10px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.5)',
+          animationDelay: '3.1s'
+        }} />
+        <div className="star-shape animate-float-and-twinkle" style={{
+          position: 'absolute',
+          top: '70%',
+          left: '80%',
+          width: '5px',
+          height: '5px',
+          background: isDarkMode ? '#f8fafc' : '#f8fafc',
+          boxShadow: isDarkMode 
+            ? '0 0 8px rgba(248,250,252,0.9), 0 0 16px rgba(248,250,252,0.5)'
+            : '0 0 8px rgba(248,250,252,0.9), 0 0 16px rgba(248,250,252,0.5)',
+          animationDelay: '2.7s'
+        }} />
+        <div className="star-shape animate-float-and-twinkle" style={{
+          position: 'absolute',
+          top: '85%',
+          left: '60%',
+          width: '4px',
+          height: '4px',
+          background: isDarkMode ? '#f0f9ff' : '#f0f9ff',
+          boxShadow: isDarkMode 
+            ? '0 0 6px rgba(240,249,255,0.8), 0 0 12px rgba(240,249,255,0.4)'
+            : '0 0 6px rgba(240,249,255,0.8), 0 0 12px rgba(240,249,255,0.4)',
+          animationDelay: '4.2s'
         }} />
         <div className="cross-shape animate-drift-and-spin" style={{
           position: 'absolute',

@@ -492,8 +492,8 @@ button:focus-visible {
   
   /* For screens between 1200px and 769px - show 2 buttons per row */
   .button-container {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
     gap: 12px !important;
     max-width: 400px !important;
     width: 100% !important;
@@ -568,12 +568,12 @@ button:focus-visible {
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 4px !important;
   }
   
   /* Profile picture - ensure it's circular and properly sized */
   .profile-container > div:first-child {
-    margin-bottom: 8px !important;
+    margin-bottom: 6px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -591,7 +591,7 @@ button:focus-visible {
   
   /* Reduce space between name/title and buttons */
   .profile-container > div:nth-child(2) {
-    margin-bottom: 8px !important;
+    margin-bottom: 6px !important;
   }
   
   /* Reduce space in the name/title section itself */
